@@ -52,12 +52,6 @@ set -e
 
 ################ Apply Patches Below ####################
 
-repo start auto system/extras
-cdv system/extras
-echo "### ext4_utils: add BoardConfig define to suppress EMMC-corrupting wipe command http://review.cyanogenmod.com/#/c/17326/"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_extras refs/changes/26/17326/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: build kernel from source (DO NOT MERGE!) http://review.cyanogenmod.com/#/c/17430/"
