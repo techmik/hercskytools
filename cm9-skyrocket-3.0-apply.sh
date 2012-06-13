@@ -58,6 +58,12 @@ echo "### skyrocket: build kernel from source (DO NOT MERGE!) http://review.cyan
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/30/17430/1 && git cherry-pick FETCH_HEAD
 cdb 
 
+repo start auto device/samsung/skyrocket
+cdv device/samsung/skyrocket
+echo "### skyrocket: enable LPA playback http://review.cyanogenmod.com/#/c/17625/"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/25/17625/1 && git cherry-pick FETCH_HEAD
+cdb 
+
 ##### SUCCESS ####
 SUCCESS=true
 exit 0
