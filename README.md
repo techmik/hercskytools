@@ -25,8 +25,7 @@ Auto Apply Patches
 This script will remove any topic branches named auto, then apply all patches under topic branch auto.
 
 ```
-hercskytools/cm9-skyrocket-apply.sh #if not working with the kernel & skyrocket
-hercskytools/cm9-skyrocket-3.0-apply.sh #if working with the kernel & skyrocket
+hercskytools/cm9-skyrocket-apply.sh #if working skyrocket
 hercskytools/cm9-hercules-apply.sh #if working with hercules
 ```
 
