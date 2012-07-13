@@ -52,11 +52,23 @@ set -e
 
 ################ Apply Patches Below ####################
 
-#repo start auto system/extras
-#cdv system/extras
-#echo "### ext4_utils: add BoardConfig define to suppress EMMC-corrupting wipe command http://review.cyanogenmod.com/#/c/17326/"
-#git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_extras refs/changes/26/17326/1 && git cherry-pick FETCH_HEAD
-#cdb
+repo start auto device/samsung/skyrocket
+cdv device/samsung/skyrocket
+echo "### skyrocket: enable compbypass"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/99/18999/2 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "### imported I727 kernel source"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/00/19000/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "### skyrocket: update defconfig with config from UCLF6"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/01/19001/1 && git cherry-pick FETCH_HEAD
+cdb
 
 ##### SUCCESS ####
 SUCCESS=true
