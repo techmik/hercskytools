@@ -71,12 +71,6 @@ echo "### overlay: Allow kernel-controlled rotator formats"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_display refs/changes/57/19557/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### msm8660: set QCOM_ACDB_ENABLED for proper audio handling"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/60/19360/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
 echo "### audio:msm8660: Fix for NT mode encode in audio HAL"
