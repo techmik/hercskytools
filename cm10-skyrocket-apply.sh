@@ -86,7 +86,7 @@ git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio 
 echo "### msm8660: Add samsung dualmic support"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/40/19640/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: Add support for camcorder mic"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/41/19641/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/41/19641/2 && git cherry-pick FETCH_HEAD
 echo "### audio/msm8660: Add support for sony camcorder mic"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/42/19642/1 && git cherry-pick FETCH_HEAD
 cdb
