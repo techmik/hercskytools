@@ -79,28 +79,25 @@ cdb
 
 repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
-echo "### audio/msm8660: define missing INVALID_ACDB_ID"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/61/19361/2 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto hardware/qcom/audio
-cdv hardware/qcom/audio
-echo "### audio/msm8660: add support for Samsung T989/I727"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/46/19346/3 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto hardware/qcom/audio
-cdv hardware/qcom/audio
-echo "### msm8660: Add support for Samsung voice devices"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/10/19410/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto hardware/qcom/audio
-cdv hardware/qcom/audio
 echo "### audio:msm8660: Fix for NT mode encode in audio HAL"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/78/19378/1 && git cherry-pick FETCH_HEAD
+echo "### audio/msm8660: define missing INVALID_ACDB_ID"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/61/19361/2 && git cherry-pick FETCH_HEAD
+echo "### audio/msm8660: add support for Samsung T989/I727"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/46/19346/3 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Add support for Samsung voice devices"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/10/19410/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Use VR channels on Samsung devices"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/37/19637/2 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Change fallback route to speaker"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/39/19639/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Add samsung dualmic support"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/40/19640/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Add support for camcorder mic"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/41/19641/1 && git cherry-pick FETCH_HEAD
+echo "### audio/msm8660: Add support for sony camcorder mic"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/42/19642/1 && git cherry-pick FETCH_HEAD
 cdb
-
 
 ##### SUCCESS ####
 SUCCESS=true
