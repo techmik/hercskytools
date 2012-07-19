@@ -75,8 +75,6 @@ repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
 echo "### audio:msm8660: Fix for NT mode encode in audio HAL"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/78/19378/1 && git cherry-pick FETCH_HEAD
-echo "### audio/msm8660: define missing INVALID_ACDB_ID"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/61/19361/2 && git cherry-pick FETCH_HEAD
 echo "### audio/msm8660: add support for Samsung T989/I727"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/46/19346/3 && git cherry-pick FETCH_HEAD
 echo "### msm8660: Add support for Samsung voice devices"
