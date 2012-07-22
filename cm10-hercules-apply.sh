@@ -71,6 +71,12 @@ echo "### overlay: Allow kernel-controlled rotator formats"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_display refs/changes/57/19557/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto frameworks/av
+cdv frameworks/av
+echo "### camera: Add parameters for some Samsung cameras"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_av refs/changes/21/19821/1 && git cherry-pick FETCH_HEAD
+cdb
+
 repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
 echo "### audio:msm8660: Fix for NT mode encode in audio HAL"
