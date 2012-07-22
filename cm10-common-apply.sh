@@ -46,15 +46,3 @@ echo "### audio/msm8660: Add support for sony camcorder mic"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/42/19642/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### bln: new driver with kernel blink and rate support [1/2]"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/18/19918/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto kernel/samsung/msm8660-common
-cdv kernel/samsung/msm8660-common
-echo "### bln: new driver with kernel blink and rate support [2/2]"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/10/19810/2 && git cherry-pick FETCH_HEAD
-cdb
-
