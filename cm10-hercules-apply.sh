@@ -91,30 +91,6 @@ echo "### audio/msm8660: Add support for sony camcorder mic"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/42/19642/1 && git cherry-pick FETCH_HEAD
 cdb
 
-echo "### applying reverts"
-
-repo start auto frameworks/av
-cdv frameworks/av
-git revert d01f1b8401f9676ee8cdcd6f3d54a5027c2cbe96 -n
-git commit -m "reverts d01f1b8401f9676ee8cdcd6f3d54a5027c2cbe96"
-cdb
-
-repo start auto hardware/libhardware
-cdv hardware/libhardware
-git revert f465c412135d14a66f69dce944681bf9cbf68a69 -n
-git commit -m "reverts f465c412135d14a66f69dce944681bf9cbf68a69"
-cdb
-
-repo start auto hardware/libhardware_legacy
-cdv hardware/libhardware_legacy
-git revert 70af87d3d2e15b57fcbb402c85f2c9240688edd9 -n
-git commit -m "reverts 70af87d3d2e15b57fcbb402c85f2c9240688edd9"
-git revert 10522bc4f5030388a1460e3eb11b4dd4d565b6e4 -n
-git commit -m "reverts 10522bc4f5030388a1460e3eb11b4dd4d565b6e4"
-git revert 11fa5f5778d361c6c626c91215000d0785eddf26 -n
-git commit -m "reverts 11fa5f5778d361c6c626c91215000d0785eddf26"
-cdb
-
 ##### SUCCESS ####
 SUCCESS=true
 exit 0
