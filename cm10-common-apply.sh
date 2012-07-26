@@ -11,6 +11,6 @@ cdb
 repo start auto frameworks/av
 cdv frameworks/av
 echo "### ACodec: Video bringup for NuPlayer and other fixes"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_av refs/changes/11/19411/7 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_av refs/changes/11/19411/8 && git cherry-pick FETCH_HEAD
 cdb
 
