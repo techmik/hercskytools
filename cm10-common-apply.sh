@@ -20,3 +20,15 @@ echo "### hardware/audio: add JB API compatibility to LPA's open_output_session"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_libhardware refs/changes/84/20184/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto frameworks/base
+cdv frameworks/base
+echo "### implement noise suppression for phone calls (1/2)"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/28/20228/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto packages/apps/Phone
+cdv packages/apps/Phone
+echo "### Phone: implement noise suppression for phone calls (2/2)"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Phone refs/changes/29/20229/1 && git cherry-pick FETCH_HEAD
+cdb
+
