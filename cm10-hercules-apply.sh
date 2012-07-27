@@ -57,6 +57,11 @@ source $DIR/cm10-common-apply.sh
 
 ################ Apply Device-Specific Patches Below ####################
 
+repo start auto device/samsung/hercules
+cdv device/samsung/hercules
+echo "### hercules: enable compiling with LPA"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/16/20216/1 && git cherry-pick FETCH_HEAD
+cdb
 
 ##### SUCCESS ####
 SUCCESS=true
