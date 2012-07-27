@@ -32,3 +32,9 @@ echo "### Phone: implement noise suppression for phone calls (2/2)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Phone refs/changes/29/20229/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto hardware/qcom/audio
+cdv hardware/qcom/audio
+echo "### msm8660: fix samsung dualmic support"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/48/20248/1 && git cherry-pick FETCH_HEAD
+cdb
+
