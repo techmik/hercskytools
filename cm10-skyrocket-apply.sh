@@ -61,8 +61,6 @@ repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: enable compiling with LPA"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/83/20183/1 && git cherry-pick FETCH_HEAD
-echo "### skyrocket: update audio params for noise suppression"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/45/20245/1 && git cherry-pick FETCH_HEAD
 cdb
 
 ##### SUCCESS ####
