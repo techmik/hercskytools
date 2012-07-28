@@ -19,10 +19,3 @@ cdv hardware/libhardware
 echo "### hardware/audio: add JB API compatibility to LPA's open_output_session"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_libhardware refs/changes/84/20184/1 && git cherry-pick FETCH_HEAD
 cdb
-
-repo start auto hardware/qcom/audio
-cdv hardware/qcom/audio
-echo "### msm8660: fix samsung dualmic support"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/48/20248/1 && git cherry-pick FETCH_HEAD
-cdb
-
