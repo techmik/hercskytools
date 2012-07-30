@@ -14,7 +14,7 @@ echo "### hardware/audio: add JB API compatibility to LPA's open_output_session"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_libhardware refs/changes/84/20184/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start hardware/qcom/audio
+repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
 echo "### msm8660: fix audio-in crash with magical debug print (DNM!)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/01/20401/1 && git cherry-pick FETCH_HEAD
