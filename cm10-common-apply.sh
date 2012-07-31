@@ -16,7 +16,9 @@ cdb
 
 repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
-echo "### msm8660: fix audio-in crash with magical debug print (DNM!)"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/01/20401/1 && git cherry-pick FETCH_HEAD
+#echo "### msm8660: fix audio-in crash with magical debug print (DNM!)"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/01/20401/1 && git cherry-pick FETCH_HEAD
+echo "### audio/msm8660: extend mutex around read to avoid race condition"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/18/20418/1 && git cherry-pick FETCH_HEAD
 cdb
 
