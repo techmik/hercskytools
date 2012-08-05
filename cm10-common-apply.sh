@@ -22,9 +22,3 @@ echo "### audio/msm8660: extend mutex around read to avoid race condition"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/18/20418/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto frameworks/base
-cdv frameworks/base
-echo "### Allow mounting of multiple volumes via mass storage (framework part)"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/77/20277/1 && git cherry-pick FETCH_HEAD
-cdb
-
