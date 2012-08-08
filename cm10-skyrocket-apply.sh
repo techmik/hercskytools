@@ -60,7 +60,7 @@ source $DIR/cm10-common-apply.sh
 repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: enable compiling with LPA"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/83/20183/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/83/20183/2 && git cherry-pick FETCH_HEAD
 cdb
 
 ##### SUCCESS ####
