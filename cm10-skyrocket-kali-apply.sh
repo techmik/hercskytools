@@ -57,12 +57,24 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ################ Apply Device-Specific Patches Below ####################
 
+repo start auto device/samsung/msm8660-common
+cdv device/samsung/msm8660-common
+echo "### msm8660: msm8660: Update headers to match new kernelspace"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/60/21060/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Enable HW VSYNC"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/61/21061/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: Update media_codecs.xml"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/88/21088/1 && git cherry-pick FETCH_HEAD
+cdb
+
 repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
 echo "### audio/msm8660: Derive AudioPolicyManager and add FM device"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/64/20964/1 && git cherry-pick FETCH_HEAD
 echo "### audio/msm8660: Fix for crash during encoding"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/65/20965/1 && git cherry-pick FETCH_HEAD
 echo "### audio/msm8660: ifdef fm for policy"
-git pull http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/66/20966/1
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/66/20966/1 && git cherry-pick FETCH_HEAD
 echo "### audio/msm8660: perform null checks audio preprocessing call"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/78/20878/1 && git cherry-pick FETCH_HEAD
 cdb
@@ -88,7 +100,7 @@ cdb
 repo start auto frameworks/av
 cdv frameworks/av
 echo "### frameworks/av: Enable FM and add FMA2DPWriter."
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_av refs/changes/67/20967/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_av refs/changes/67/20967/2 && git cherry-pick FETCH_HEAD
 cdb
 
 ##### SUCCESS ####
