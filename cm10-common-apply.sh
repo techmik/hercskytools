@@ -10,8 +10,8 @@ echo "### msm8660: Enable HW VSYNC"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/61/21061/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: Update media_codecs.xml"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/88/21088/1 && git cherry-pick FETCH_HEAD
-#echo "### msm8660: use toolchain 4.4.3 for kernel compile"
-#git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/50/21150/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: use toolchain 4.4.3 for kernel compile"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/61/21161/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/qcom/audio
