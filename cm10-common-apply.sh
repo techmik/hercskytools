@@ -26,6 +26,8 @@ echo "### audio/msm8660: remove local msm_audio_config struct definition"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/55/21155/1 && git cherry-pick FETCH_HEAD
 echo "### audio/msm8660: perform null checks audio preprocessing call"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/78/20878/1 && git cherry-pick FETCH_HEAD
+echo "### audio/msm8660: disable caf policy for now"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/77/21177/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/libhardware_legacy
