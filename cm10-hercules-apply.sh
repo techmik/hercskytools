@@ -57,16 +57,6 @@ source $DIR/cm10-common-apply.sh
 
 ################ Apply Device-Specific Patches Below ####################
 
-repo start auto device/samsung/hercules
-cdv device/samsung/hercules
-echo "### hercules: remove QCOM_ROTATOR_KERNEL_FORMATS define"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/94/21094/1 && git cherry-pick FETCH_HEAD
-echo "### hercules: use general name in fstab rather than device name"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/82/21382/1 && git cherry-pick FETCH_HEAD
-echo "### hercules: fix mislabeled sd cards"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/83/21383/1 && git cherry-pick FETCH_HEAD
-cdb
-
 ##### SUCCESS ####
 SUCCESS=true
 exit 0
