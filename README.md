@@ -1,4 +1,4 @@
-CM9 Build Instructions
+CM10 Build Instructions
 =======================
 ```
 mkdir cm10
