@@ -1,8 +1,8 @@
 CM9 Build Instructions
 =======================
 ```
-mkdir cm9
-cd cm9
+mkdir cm10
+cd cm10
 repo init -u git://github.com/CyanogenMod/android.git -b ics
 ```
 
@@ -25,8 +25,7 @@ Auto Apply Patches
 This script will remove any topic branches named auto, then apply all patches under topic branch auto.
 
 ```
-hercskytools/cm9-skyrocket-apply.sh #if working skyrocket
-hercskytools/cm9-hercules-apply.sh #if working with hercules
+hercskytools/cm10-apply.sh
 ```
 
 Build
