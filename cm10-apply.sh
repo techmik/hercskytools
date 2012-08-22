@@ -59,6 +59,12 @@ echo "### cm: New boot animation from Cameron Behzadpour"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/99/21799/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto build
+cdv build
+echo "### build: kernel: remove hard coded darwin toolchain."
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_build refs/changes/46/21846/3 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
