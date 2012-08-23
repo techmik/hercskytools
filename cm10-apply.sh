@@ -89,9 +89,10 @@ repo start auto device/samsung/hercules
 cdv device/samsung/hercules
 echo "### hercules: use new square boot animation"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/10/21810/1 && git cherry-pick FETCH_HEAD
+echo "### hercules: clean up system.prop"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/36/21936/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
-
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
