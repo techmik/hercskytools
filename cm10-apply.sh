@@ -59,11 +59,11 @@ echo "### cm: New boot animation from Cameron Behzadpour"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/99/21799/2 && git cherry-pick FETCH_HEAD
 cdb
 
-#repo start auto device/samsung/msm8660-common
-#cdv device/samsung/msm8660-common
-#echo "### msm8660: added PowerHAL, switched to interactive governor"
-#git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/93/21893/1 && git cherry-pick FETCH_HEAD
-#cdb
+repo start auto device/samsung/msm8660-common
+cdv device/samsung/msm8660-common
+echo "### msm8660: added PowerHAL, switched to interactive governor"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/93/21893/1 && git cherry-pick FETCH_HEAD
+cdb
 
 #repo start auto kernel/samsung/msm8660-common
 #cdv kernel/samsung/msm8660-common
