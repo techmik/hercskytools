@@ -107,6 +107,8 @@ repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: use new square boot animation"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/12/21812/1 && git cherry-pick FETCH_HEAD
+echo "### skyrocket: clean up system.prop"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/39/21939/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
 
