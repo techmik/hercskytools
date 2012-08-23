@@ -69,16 +69,22 @@ echo "### msm8660: update headers to match kernel"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/33/21933/1 && git cherry-pick FETCH_HEAD
 cdb
 
-#repo start auto kernel/samsung/msm8660-common
-#cdv kernel/samsung/msm8660-common
-#echo "### cpufreq: Import latest cpufreq_interactive driver from Google"
-#git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/94/21894/1 && git cherry-pick FETCH_HEAD
-#cdb
-
 repo start auto packages/apps/Mms
 cdv packages/apps/Mms
 echo "### SmsReceiverService: Stop only if there's no outstanding SMSes being sent."
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Mms refs/changes/86/21886/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto frameworks/base
+cdv frameworks/base
+echo "### Add option for switching between UMS and MTP/PTP mode. (1/2)"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/17/21117/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto packages/apps/Settings
+cdv packages/apps/Settings
+echo "### Add option for switching between UMS and MTP/PTP mode. (2/2)"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Settings refs/changes/15/21115/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
