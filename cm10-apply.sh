@@ -67,14 +67,6 @@ echo "### msm8660: use default toolchain for kernel compile"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/32/21932/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: update headers to match kernel"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/33/21933/1 && git cherry-pick FETCH_HEAD
-echo "### msm8660: Enable video preview workarounds"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/50/21950/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto packages/apps/Camera
-cdv packages/apps/Camera
-echo "### CAMERA FIXES"
-git pull http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Camera refs/changes/55/21955/1
 cdb
 
 repo start auto packages/apps/Mms
@@ -94,6 +86,7 @@ cdv packages/apps/Settings
 echo "### Add option for switching between UMS and MTP/PTP mode. (2/2)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Settings refs/changes/15/21115/1 && git cherry-pick FETCH_HEAD
 cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
