@@ -56,7 +56,7 @@ set -e
 repo start auto vendor/cm
 cdv vendor/cm
 echo "### cm: New boot animation from Cameron Behzadpour"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/99/21799/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/99/21799/5 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/msm8660-common
@@ -94,7 +94,7 @@ if [ -e device/samsung/hercules ]; then
 repo start auto device/samsung/hercules
 cdv device/samsung/hercules
 echo "### hercules: use new square boot animation"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/10/21810/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/10/21810/2 && git cherry-pick FETCH_HEAD
 echo "### hercules: clean up system.prop"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/36/21936/1 && git cherry-pick FETCH_HEAD
 cdb
@@ -106,7 +106,7 @@ if [ -e device/samsung/skyrocket ]; then
 repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: use new square boot animation"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/12/21812/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/12/21812/2 && git cherry-pick FETCH_HEAD
 echo "### skyrocket: clean up system.prop"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/39/21939/1 && git cherry-pick FETCH_HEAD
 cdb
