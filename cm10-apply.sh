@@ -63,8 +63,8 @@ repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### msm8660: add PowerHAL, ported from d2"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/93/21893/2 && git cherry-pick FETCH_HEAD
-echo "### msm8660: use default toolchain for kernel compile"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/32/21932/1 && git cherry-pick FETCH_HEAD
+#echo "### msm8660: use default toolchain for kernel compile"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/32/21932/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: update headers to match kernel"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/33/21933/1 && git cherry-pick FETCH_HEAD
 cdb
