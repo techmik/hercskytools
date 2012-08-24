@@ -69,8 +69,6 @@ echo "### msm8660: update headers to match kernel"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/33/21933/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: Enable video preview workarounds"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/50/21950/1 && git cherry-pick FETCH_HEAD
-echo "### Revert \"bln: new driver with kernel blink and rate support [1/2]\""
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/67/21967/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Camera
@@ -95,12 +93,6 @@ repo start auto packages/apps/Settings
 cdv packages/apps/Settings
 echo "### Add option for switching between UMS and MTP/PTP mode. (2/2)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Settings refs/changes/15/21115/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto kernel/samsung/msm8660-common
-cdv kernel/samsung/msm8660-common
-echo "### Revert \"bln: new driver with kernel blink and rate support [2/2]\""
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/68/21968/1 && git cherry-pick FETCH_HEAD
 cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
