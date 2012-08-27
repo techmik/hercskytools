@@ -77,6 +77,12 @@ echo "### libpixelflinger: Add ARM NEON optimized scanline_t32cb16"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/19/22219/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "### LCD: ld9040: increase the delay in powerup"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/72/22272/1 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
