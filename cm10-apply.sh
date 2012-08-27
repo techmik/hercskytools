@@ -86,8 +86,13 @@ cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
 
-#if [ -e device/samsung/hercules ]; then
-#fi
+if [ -e device/samsung/hercules ]; then
+repo start auto device/samsung/hercules
+cdv device/samsung/hercules
+echo "### hercules: remove BOARD_HAS_SAMSUNG_VOLUME_BUG as it is unneeded"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/74/22274/1 && git cherry-pick FETCH_HEAD
+cdb
+fi
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
