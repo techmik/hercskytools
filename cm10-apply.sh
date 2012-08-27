@@ -53,12 +53,6 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto vendor/cm
-cdv vendor/cm
-echo "### cm: New boot animation from Cameron Behzadpour"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/99/21799/5 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### msm8660: add PowerHAL, ported from d2"
