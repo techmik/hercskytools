@@ -80,8 +80,8 @@ cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
 
-if [ -e device/samsung/hercules ]; then
-fi
+#if [ -e device/samsung/hercules ]; then
+#fi
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
