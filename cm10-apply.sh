@@ -74,7 +74,7 @@ git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm86
 echo "### msm8660: update skyrocket defconfig with latest from quincy"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/25/22325/2 && git cherry-pick FETCH_HEAD
 echo "### msm8660: update hercules defconfig"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/36/22336/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/36/22336/3 && git cherry-pick FETCH_HEAD
 cdb
 
 
