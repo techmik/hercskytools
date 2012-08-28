@@ -83,6 +83,8 @@ echo "### LCD: ld9040: increase the delay in powerup"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/72/22272/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: update skyrocket defconfig with latest from quincy"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/25/22325/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: update hercules defconfig"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/36/22336/1 && git checkout FETCH_HEAD
 cdb
 
 repo start auto frameworks/av
