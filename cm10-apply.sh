@@ -53,16 +53,6 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### msm8660: Use MM heap for our ICS camera blobs"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/06/22306/1 && git cherry-pick FETCH_HEAD
-echo "### msm8660: Turn BLN off by default"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/14/22314/1 && git cherry-pick FETCH_HEAD
-echo "### msm8660: Add Power HAL"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/19/22319/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto packages/apps/Settings
 cdv packages/apps/Settings
 echo "### Add option for switching between UMS and MTP/PTP mode. (2/2)"
@@ -85,18 +75,6 @@ echo "### msm8660: update skyrocket defconfig with latest from quincy"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/25/22325/1 && git cherry-pick FETCH_HEAD
 echo "### msm8660: update hercules defconfig"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/36/22336/1 && git checkout FETCH_HEAD
-cdb
-
-repo start auto frameworks/av
-cdv frameworks/av
-echo "### libstagefright: Add flag to use MM heap for SurfaceMediaSource (and dependencies)"
-git pull http://review.cyanogenmod.com/CyanogenMod/android_frameworks_av refs/changes/04/22304/1
-cdb
-
-repo start auto frameworks/native
-cdv frameworks/native
-echo "### native: Add custom 32-aligned NV12 colorformat"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_native refs/changes/05/22305/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
