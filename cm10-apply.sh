@@ -77,6 +77,12 @@ echo "### msm8660: update hercules defconfig"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/36/22336/3 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto frameworks/base
+cdv frameworks/base
+echo "### SamsungQualcomm RILs: throttle multiple outstanding SEND_SMS requests"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/56/22356/2 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
@@ -95,6 +101,8 @@ repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: clean up system properties and BoardConfig"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/39/21939/2 && git cherry-pick FETCH_HEAD
+echo "### skyrocket: allow SMS > 160 to use multipart"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/55/22355/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
 
