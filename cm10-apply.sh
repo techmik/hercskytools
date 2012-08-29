@@ -71,12 +71,8 @@ repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
 #echo "### LCD: ld9040: increase the delay in powerup"
 #git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/72/22272/1 && git cherry-pick FETCH_HEAD
-echo "### msm8660: update skyrocket defconfig with latest from quincy"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/25/22325/2 && git cherry-pick FETCH_HEAD
 echo "### msm8660: update hercules defconfig"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/36/22336/3 && git cherry-pick FETCH_HEAD
-echo "### Revert \"video: msm: Add user-defined backlight scaling\""
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/22377/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base
@@ -85,11 +81,12 @@ echo "### SamsungQualcomm RILs: throttle multiple outstanding SEND_SMS requests"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/56/22356/2 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### msm8660: remove mdp_bl_scale_data from header file to match kernel"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/78/22378/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto external/freetype
+#cdv external/freetype
+#echo "### Freetype patches"
+#git pull http://review.cyanogenmod.com/CyanogenMod/android_external_freetype refs/changes/87/22387/1
+#cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
@@ -98,6 +95,8 @@ repo start auto device/samsung/hercules
 cdv device/samsung/hercules
 echo "### hercules: remove BOARD_HAS_SAMSUNG_VOLUME_BUG as it is unneeded"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/74/22274/1 && git cherry-pick FETCH_HEAD
+echo "### hercules: allow SMS > 160 to use multipart"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/06/22406/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
 
@@ -106,8 +105,6 @@ fi
 if [ -e device/samsung/skyrocket ]; then
 repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
-echo "### skyrocket: clean up system properties and BoardConfig"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/39/21939/2 && git cherry-pick FETCH_HEAD
 echo "### skyrocket: allow SMS > 160 to use multipart"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/55/22355/1 && git cherry-pick FETCH_HEAD
 cdb
