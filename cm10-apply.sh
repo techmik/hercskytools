@@ -65,6 +65,8 @@ repo start auto frameworks/base
 cdv frameworks/base
 echo "### SamsungQualcomm RILs: throttle multiple outstanding SEND_SMS requests"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/56/22356/3 && git cherry-pick FETCH_HEAD
+echo "### RILs: Eliminate repeated overrides of responseOperatorInfos."
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/76/22476/2 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto kernel/samsung/msm8660-common
