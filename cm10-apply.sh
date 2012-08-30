@@ -53,12 +53,6 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto packages/apps/Settings
-cdv packages/apps/Settings
-echo "### Add option for switching between UMS and MTP/PTP mode. (2/2)"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Settings refs/changes/15/21115/4 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto system/core
 cdv system/core
 echo "### libpixelflinger: Build NEON optimized routine per target configuration"
