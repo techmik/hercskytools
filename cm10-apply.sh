@@ -74,7 +74,7 @@ cdv kernel/samsung/msm8660-common
 echo "### qt602240_ts: fix incorrect #if !defined(CONFIG_*_MODEL) usage"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/15/22515/3 && git cherry-pick FETCH_HEAD
 echo "### fix compiling on Mac with non-GZIP kernel compressions"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/56/22456/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/56/22456/2 && git cherry-pick FETCH_HEAD
 echo "### Revert \"video: msm: Add user-defined backlight scaling\""
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/22377/1 && git cherry-pick FETCH_HEAD
 echo "### LCD: ld9040: increase the delay in powerup"
