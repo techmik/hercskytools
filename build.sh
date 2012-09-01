@@ -13,6 +13,7 @@ START=$(date +%s)
                 exit
                 ;;
         prepare)
+                repo abandon auto
                 repo sync -j8
                 exit
                 ;;
