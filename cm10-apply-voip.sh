@@ -58,8 +58,10 @@ $DIR/cm10-apply.sh
 
 repo start auto hardware/qcom/audio
 cdv hardware/qcom/audio
-echo "### audio/msm8660: fixes for QCOM_VOIP_ENABLED"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/39/20039/3 && git cherry-pick FETCH_HEAD
+#echo "### audio/msm8660: fixes for QCOM_VOIP_ENABLED"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/39/20039/3 && git cherry-pick FETCH_HEAD
+echo "### KALI's AUDIO PATCHES"
+git pull http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/97/22697/1
 cdb
 
 repo start auto device/samsung/msm8660-common
@@ -68,17 +70,17 @@ echo "### msm8660: set QCOM_VOIP_ENABLED"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/73/20073/2 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto hardware/libhardware_legacy
-cdv hardware/libhardware_legacy
-echo "### audio: add DIRECTOUTPUT define"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_libhardware_legacy refs/changes/94/22294/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto hardware/libhardware_legacy
+#cdv hardware/libhardware_legacy
+#echo "### audio: add DIRECTOUTPUT define"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_libhardware_legacy refs/changes/94/22294/1 && git cherry-pick FETCH_HEAD
+#cdb
 
-repo start auto system/core
-cdv system/core
-echo "### audio: add DIRECTOUTPUT define"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/95/22295/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto system/core
+#cdv system/core
+#echo "### audio: add DIRECTOUTPUT define"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/95/22295/1 && git cherry-pick FETCH_HEAD
+#cdb
 
 
 ################ Apply Hercules-Specific VoIP Patches Below ####################

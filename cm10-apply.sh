@@ -65,6 +65,14 @@ repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### msm8660: remove mdp_bl_scale_data from header file to match kernel"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/78/22378/1 && git cherry-pick FETCH_HEAD
+#echo "### msm8660: use standard CAF audio_policy.conf"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/00/22700/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto frameworks/base
+cdv frameworks/base
+echo "### WebView: fix crash when moving cursor"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/95/22595/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
