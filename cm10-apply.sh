@@ -67,12 +67,6 @@ git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm86
 #git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/00/22700/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto frameworks/base
-cdv frameworks/base
-echo "### WebView: fix crash when moving cursor"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/95/22595/1 && git cherry-pick FETCH_HEAD
-cdb
-
 
 ################ Apply Hercules-Specific Patches Below ####################
 
