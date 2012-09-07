@@ -59,12 +59,6 @@ set -e
 #git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/72/22272/1 && git cherry-pick FETCH_HEAD
 #cdb
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### msm8660: Enable hardware audio codecs"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/97/22797/3 && git cherry-pick FETCH_HEAD
-cdb
-
 
 ################ Apply Hercules-Specific Patches Below ####################
 
