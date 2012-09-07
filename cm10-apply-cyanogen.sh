@@ -59,7 +59,7 @@ $DIR/cm10-apply.sh
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### CYANOGEN'S MSM8660 PATCHES"
-git pull http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/72/22872/1
+git pull http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/00/22800/4
 cdb
 
 
