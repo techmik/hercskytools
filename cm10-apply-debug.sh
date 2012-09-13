@@ -56,11 +56,9 @@ $DIR/cm10-apply.sh
 
 ################ Apply Common Patches Below ####################
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### CYANOGEN'S MSM8660 PATCHES"
-git pull http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/00/22800/4
-cdb
+#repo start auto device/samsung/msm8660-common
+#cdv device/samsung/msm8660-common
+#cdb
 
 
 ################ Apply Hercules-Specific Patches Below ####################
@@ -68,8 +66,8 @@ cdb
 if [ -e device/samsung/hercules ]; then
 repo start auto device/samsung/hercules
 cdv device/samsung/hercules
-echo "### hercules: Consolidate system properties"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/01/22801/1 && git cherry-pick FETCH_HEAD
+echo "### defconfig: hercules: Enable more debugging options"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
 
@@ -78,8 +76,8 @@ fi
 if [ -e device/samsung/skyrocket ]; then
 repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
-echo "### skyrocket: Consolidate system properties"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/04/22804/1 && git cherry-pick FETCH_HEAD
+echo "### skyrocket: enable additional kernel debugging"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/69/23269/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
 
