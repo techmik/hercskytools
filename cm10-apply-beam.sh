@@ -53,9 +53,16 @@ set -e
 
 repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
-echo "### msm8660: improve robustness of cypress-touchkey driver"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/70/23270/1 && git cherry-pick FETCH_HEAD
+echo "### video: ld9040: Turn panel off after stop_drawing"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/72/23372/1 && git cherry-pick FETCH_HEAD
 cdb
+
+repo start auto device/samsung/msm8660-common
+cdv device/samsung/msm8660-common
+echo "### Revert \"msm8660: disable electron beam animation to avoid surfaceflinger lockup\""
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/73/23373/1 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
