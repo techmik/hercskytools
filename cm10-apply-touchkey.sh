@@ -46,19 +46,21 @@ fi
 # Save Base Directory
 BASEDIR=$(pwd)
 
-# Abandon auto topic branch
-repo abandon auto
 set -e
+
+################ Apply the Normal Patches Below ####################
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$DIR/cm10-apply-debug.sh
 
 
 ################ Apply Common Patches Below ####################
 
-repo start auto hardware/audio/qcom
-cdv hardware/audio/qcom
-echo "### audio/msm8660: fix a2dp"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/77/23377/1 && git cherry-pick FETCH_HEAD
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "### msm8660: improve robustness of cypress-touchkey driver"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/70/23270/1 && git cherry-pick FETCH_HEAD
 cdb
-
 
 ################ Apply Hercules-Specific Patches Below ####################
 
