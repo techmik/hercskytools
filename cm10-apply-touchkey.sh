@@ -54,7 +54,7 @@ set -e
 repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
 echo "### msm8660: improve robustness of cypress-touchkey driver"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/70/23270/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/70/23270/2 && git cherry-pick FETCH_HEAD
 cdb
 
 ################ Apply Hercules-Specific Patches Below ####################

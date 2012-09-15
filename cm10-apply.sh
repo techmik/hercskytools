@@ -53,10 +53,12 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto hardware/audio/qcom
-cdv hardware/audio/qcom
+repo start auto hardware/qcom/audio
+cdv hardware/qcom/audio
 echo "### audio/msm8660: fix a2dp"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/77/23377/1 && git cherry-pick FETCH_HEAD
+echo "### audio/msm: fix 7x30 and 8660 voice call volume"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/25/23425/3 && git cherry-pick FETCH_HEAD
 cdb
 
 
