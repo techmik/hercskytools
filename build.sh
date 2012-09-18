@@ -9,6 +9,9 @@ START=$(date +%s)
 # Device specific settings
     case "$COMMAND" in
         clean)
+                cd kernel/samsung/msm8660-common
+                make mrproper
+                cd ../../../
                 make clobber
                 exit
                 ;;
