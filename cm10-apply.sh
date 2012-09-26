@@ -76,22 +76,6 @@ echo "### skyrocket: enable additional kernel debugging"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/69/23269/2 && git cherry-pick FETCH_HEAD
 echo "### defconfig: hercules: Enable more debugging options"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/2 && git cherry-pick FETCH_HEAD
-echo "### video: msm: Add support for VSYNC notify via sysfs"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/41/23941/1 && git cherry-pick FETCH_HEAD
-echo "### msm8660: enable vsync sysfs on all supported devices"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/60/23960/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto hardware/qcom/display
-cdv hardware/qcom/display
-echo "### hwc: Support VSYNC notification via sysfs"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_display refs/changes/23/23923/2 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto system/core
-cdv system/core
-echo "### charger: make default to not suspend in charge mode"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/46/23946/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
