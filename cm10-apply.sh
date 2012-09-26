@@ -54,12 +54,32 @@ set -e
 ################ Apply Common Patches Below ####################
 
 
+repo start auto device/samsung/msm8660-common
+cdv device/samsung/msm8660-common
+echo "### msm8660: import latest power HAL from qcom-common tree"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/59/23959/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto frameworks/base
+cdv frameworks/base
+echo "### power: Add CPU boosting interface"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/89/23789/4 && git cherry-pick FETCH_HEAD
+echo "### Add CPU boosting hooks"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/90/23790/5 && git cherry-pick FETCH_HEAD
+cdb
+
 repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
-echo "### cypress: fix potential deadlock resuming from bln active"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/20/23920/1 && git cherry-pick FETCH_HEAD
+echo "### cypress: enable debugging (do not submit)"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/63/23963/1 && git cherry-pick FETCH_HEAD
+echo "### skyrocket: enable additional kernel debugging"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/69/23269/2 && git cherry-pick FETCH_HEAD
+echo "### defconfig: hercules: Enable more debugging options"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/2 && git cherry-pick FETCH_HEAD
 echo "### video: msm: Add support for VSYNC notify via sysfs"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/41/23941/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: enable vsync sysfs on all supported devices"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/60/23960/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/qcom/display
