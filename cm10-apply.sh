@@ -54,6 +54,26 @@ set -e
 ################ Apply Common Patches Below ####################
 
 
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "### cypress: fix potential deadlock resuming from bln active"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/20/23920/1 && git cherry-pick FETCH_HEAD
+echo "### video: msm: Add support for VSYNC notify via sysfs"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/41/23941/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto hardware/qcom/display
+cdv hardware/qcom/display
+echo "### hwc: Support VSYNC notification via sysfs"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_display refs/changes/23/23923/2 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto system/core
+cdv system/core
+echo "### charger: make default to not suspend in charge mode"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/46/23946/1 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
