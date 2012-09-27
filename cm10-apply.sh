@@ -60,14 +60,6 @@ echo "### msm8660: import latest power HAL from qcom-common tree"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/59/23959/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto frameworks/base
-cdv frameworks/base
-echo "### power: Add CPU boosting interface"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/89/23789/4 && git cherry-pick FETCH_HEAD
-echo "### Add CPU boosting hooks"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/90/23790/5 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
 echo "### cypress: enable debugging (do not submit)"
