@@ -68,6 +68,8 @@ echo "### skyrocket: enable additional kernel debugging"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/69/23269/2 && git cherry-pick FETCH_HEAD
 echo "### defconfig: hercules: Enable more debugging options"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/2 && git cherry-pick FETCH_HEAD
+echo "### msm8660: fix BUG crash in fs/dcache.c (WIP)"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/46/24046/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
