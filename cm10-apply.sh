@@ -65,11 +65,13 @@ cdv kernel/samsung/msm8660-common
 echo "### cypress: enable debugging (do not submit)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/63/23963/1 && git cherry-pick FETCH_HEAD
 echo "### skyrocket: enable additional kernel debugging"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/69/23269/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/69/23269/3 && git cherry-pick FETCH_HEAD
 echo "### defconfig: hercules: Enable more debugging options"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/2 && git cherry-pick FETCH_HEAD
 echo "### msm8660: fix BUG crash in fs/dcache.c (WIP)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/46/24046/1 && git cherry-pick FETCH_HEAD
+#echo "### lcdc_ld9040: add spinlock around backlight bright controls"
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/47/24047/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
