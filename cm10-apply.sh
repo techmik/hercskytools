@@ -70,10 +70,12 @@ echo "### defconfig: hercules: Enable more debugging options"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/2 && git cherry-pick FETCH_HEAD
 #echo "### msm8660: fix BUG crash in fs/dcache.c (WIP)"
 #git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/46/24046/1 && git cherry-pick FETCH_HEAD
-#echo "### lcdc_ld9040: add spinlock around backlight bright controls"
-#git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/47/24047/1 && git cherry-pick FETCH_HEAD
 echo "### Revert \"block: replace __getblk_slow misfix by grow_dev_page fix\""
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/63/24063/1 && git cherry-pick FETCH_HEAD
+echo "### qt602240_ts: add additional mutex protection"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/14/24114/1 && git cherry-pick FETCH_HEAD
+echo "### lcdc_ld9040: add additional mutex protection"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/13/24113/1 && git cherry-pick FETCH_HEAD
 cdb
 
 

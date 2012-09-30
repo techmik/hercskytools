@@ -57,28 +57,26 @@ echo "### video: ld9040: Turn panel off after stop_drawing"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/72/23372/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "### Revert \"msm8660: disable electron beam animation to avoid surfaceflinger lockup\""
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_msm8660-common refs/changes/73/23373/1 && git cherry-pick FETCH_HEAD
-cdb
-
 
 ################ Apply Hercules-Specific Patches Below ####################
 
-#if [ -e device/samsung/hercules ]; then
-#repo start auto device/samsung/hercules
-#cdv device/samsung/hercules
-#cdb
-#fi
+if [ -e device/samsung/hercules ]; then
+repo start auto device/samsung/hercules
+cdv device/samsung/hercules
+echo "### hercules: enable beam animation"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_hercules refs/changes/12/24112/1 && git cherry-pick FETCH_HEAD
+cdb
+fi
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
-#if [ -e device/samsung/skyrocket ]; then
-#repo start auto device/samsung/skyrocket
-#cdv device/samsung/skyrocket
-#cdb
-#fi
+if [ -e device/samsung/skyrocket ]; then
+repo start auto device/samsung/skyrocket
+cdv device/samsung/skyrocket
+echo "### skyrocket: enable beam animation"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/57/24057/1 && git cherry-pick FETCH_HEAD
+cdb
+fi
 
 
 ##### SUCCESS ####
