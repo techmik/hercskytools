@@ -104,6 +104,8 @@ repo start auto device/samsung/skyrocket
 cdv device/samsung/skyrocket
 echo "### skyrocket: enable beam animation"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/57/24057/1 && git cherry-pick FETCH_HEAD
+echo "### skyrocket: add support for whole-device encryption"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/48/24248/1 && git cherry-pick FETCH_HEAD
 cdb
 fi
 
