@@ -53,13 +53,6 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-
-repo start auto build
-cdv build
-echo "### build: work around missing readlink -f on Mac"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_build refs/changes/38/24338/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### msm8660: import latest power HAL from qcom-common tree"
