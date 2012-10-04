@@ -54,12 +54,6 @@ set -e
 ################ Apply Common Patches Below ####################
 
 
-repo start auto hardware/qcom/audio
-cdv hardware/qcom/audio
-echo "### msm8660 audio: fix BT in-call routing on non-HTC phones"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_hardware_qcom_audio refs/changes/38/24238/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### msm8660: import latest power HAL from qcom-common tree"
