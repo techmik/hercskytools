@@ -57,8 +57,6 @@ repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
 echo "### cypress: enable debugging (do not submit)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/63/23963/1 && git cherry-pick FETCH_HEAD
-echo "### defconfig: hercules: Enable more debugging options"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/23277/2 && git cherry-pick FETCH_HEAD
 cdb
 
 
