@@ -59,6 +59,12 @@ echo "### cypress: enable debugging (do not submit)"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/63/23963/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto device/samsung/celox-common
+cdv device/samsung/celox-common
+echo "### celox: add support for whole-device encryption"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/06/26106/1 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
@@ -71,13 +77,11 @@ cdb
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
-if [ -e device/samsung/skyrocket ]; then
-repo start auto device/samsung/skyrocket
-cdv device/samsung/skyrocket
-echo "### skyrocket: add support for whole-device encryption"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_device_samsung_skyrocket refs/changes/48/24248/1 && git cherry-pick FETCH_HEAD
-cdb
-fi
+#if [ -e device/samsung/skyrocket ]; then
+#repo start auto device/samsung/skyrocket
+#cdv device/samsung/skyrocket
+#cdb
+#fi
 
 
 ##### SUCCESS ####
