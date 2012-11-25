@@ -57,12 +57,14 @@ repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "### msm8660: define TARGET_ARCH as required by 4.2"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/58/27058/1 && git cherry-pick FETCH_HEAD
+echo "### msm8660: disable overlays broken/obsolete in 4.2"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/60/27060/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/celox-common
 cdv device/samsung/celox-common
 echo "### celox-common BoardConfigCommon.mk: New syntax for specifying ramdisk offset."
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/57/27057/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/57/27057/2 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/libhardware
