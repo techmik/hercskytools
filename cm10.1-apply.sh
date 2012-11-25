@@ -64,7 +64,9 @@ cdb
 repo start auto device/samsung/celox-common
 cdv device/samsung/celox-common
 echo "### celox-common BoardConfigCommon.mk: New syntax for specifying ramdisk offset."
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/57/27057/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/57/27057/3 && git cherry-pick FETCH_HEAD
+echo "### celox-common: fix mounting of emmc"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/27/27127/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/libhardware
