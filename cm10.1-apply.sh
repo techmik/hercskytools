@@ -77,11 +77,11 @@ echo "### fix compile errors by defining AUDIO_FORMAT_QCELP & AUDIO_FORMAT_EVRC"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_core refs/changes/55/26755/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto frameworks/base
-cdv frameworks/base
-echo "### implement noise suppression for phone calls (1/2)"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/55/27055/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto frameworks/base
+#cdv frameworks/base
+#echo "### implement noise suppression for phone calls (1/2)"
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/55/27055/1 && git cherry-pick FETCH_HEAD
+#cdb
 
 repo start auto packages/apps/Phone
 cdv packages/apps/Phone
