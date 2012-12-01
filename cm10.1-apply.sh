@@ -83,11 +83,11 @@ cdb
 #git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/55/27055/1 && git cherry-pick FETCH_HEAD
 #cdb
 
-repo start auto packages/apps/Phone
-cdv packages/apps/Phone
-echo "### Phone: implement noise suppression for phone calls (2/2)"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/56/27056/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto packages/apps/Phone
+#cdv packages/apps/Phone
+#echo "### Phone: implement noise suppression for phone calls (2/2)"
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/56/27056/1 && git cherry-pick FETCH_HEAD
+#cdb
 
 
 ################ Apply Hercules-Specific Patches Below ####################
