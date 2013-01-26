@@ -53,41 +53,11 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto device/samsung/celox-common
-cdv device/samsung/celox-common
-echo "### celox-common: fix mounting of emmc"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/27/27127/1 && git cherry-pick FETCH_HEAD
+repo start auto hardware/qcom/audio-caf
+cdv hardware/qcom/audio-caf
+echo "### qcom-audio-caf: added missing include paths for mm-core"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_audio-caf refs/changes/27/31027/1 && git cherry-pick FETCH_HEAD
 cdb
-
-repo start auto hardware/qcom/display
-cdv hardware/qcom/display
-echo "### qcom/display: build for all qcom's not just msm8960"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_display refs/changes/31/27131/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto hardware/libhardware
-cdv hardware/libhardware
-echo "### remove non-existent AUDIO_CHANNEL_IN_5POINT1 and change to only other audio input AUDIO_CHANNEL_IN_ALL"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_libhardware refs/changes/56/26756/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto system/core
-cdv system/core
-echo "### fix compile errors by defining AUDIO_FORMAT_QCELP & AUDIO_FORMAT_EVRC"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_core refs/changes/55/26755/1 && git cherry-pick FETCH_HEAD
-cdb
-
-#repo start auto frameworks/base
-#cdv frameworks/base
-#echo "### implement noise suppression for phone calls (1/2)"
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/55/27055/1 && git cherry-pick FETCH_HEAD
-#cdb
-
-#repo start auto packages/apps/Phone
-#cdv packages/apps/Phone
-#echo "### Phone: implement noise suppression for phone calls (2/2)"
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/56/27056/1 && git cherry-pick FETCH_HEAD
-#cdb
 
 
 ################ Apply Hercules-Specific Patches Below ####################
