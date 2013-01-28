@@ -53,10 +53,10 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto hardware/qcom/audio-caf
-cdv hardware/qcom/audio-caf
-echo "### qcom-audio-caf: added missing include paths for mm-core"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_audio-caf refs/changes/27/31027/1 && git cherry-pick FETCH_HEAD
+repo start auto vendor/cm
+cdv vendor/cm
+echo "### apns: add new "phone" LTE apn for AT&T seen on iPhone 5 SIMs"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_vendor_cm refs/changes/87/31087/1 && git cherry-pick FETCH_HEAD
 cdb
 
 
