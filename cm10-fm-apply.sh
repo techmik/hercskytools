@@ -60,8 +60,8 @@ cdb
 
 repo start auto frameworks/base
 cdv frameworks/base
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/90/30390/1 && git cherry-pick FETCH_HEAD
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/50/30350/3 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/90/30390/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/celox-common
