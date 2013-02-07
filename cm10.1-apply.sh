@@ -65,12 +65,6 @@ echo "apns: add 'phone' APN for AT&T"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_vendor_cm refs/changes/87/31087/3 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto frameworks/opt/telephony
-cdv frameworks/opt/telephony
-echo "Qualcomm LTE RILs: do not make mLteRsrp negative"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/65/31565/1 && git cherry-pick FETCH_HEAD
-cdb
-
 
 ################ Apply Hercules-Specific Patches Below ####################
 
