@@ -33,6 +33,12 @@ START=$(date +%s)
                 ./vendor/cm/get-prebuilts
                 brunch cm_hercules-eng
                 ;;
+        quincyatt)
+                ./hercskytools/cm10-${COMMAND}-apply.sh
+                . build/envsetup.sh
+                ./vendor/cm/get-prebuilts
+                brunch cm_quincyatt-eng
+                ;;
         *)
                 echo -e "Usage: $0 DEVICE ADDITIONAL"
                 echo -e "Example: ./build.sh skyrocket"
