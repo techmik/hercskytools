@@ -84,6 +84,15 @@ cdb
 #fi
 
 
+################ Apply Quincyatt-Specific Patches Below ####################
+
+#if [ -e device/samsung/quincyatt ]; then
+#repo start auto device/samsung/quincyatt
+#cdv device/samsung/quincyatt
+#cdb
+#fi
+
+
 ##### SUCCESS ####
 SUCCESS=true
 exit 0
