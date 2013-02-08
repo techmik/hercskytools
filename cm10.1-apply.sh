@@ -65,6 +65,17 @@ echo "apns: add 'phone' APN for AT&T"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_vendor_cm refs/changes/87/31087/3 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto system/core
+cdv system/core
+echo "rootdir: Set perms on interactive governor's min_sample_time"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_core refs/changes/03/31603/1 && git cherry-pick FETCH_HEAD
+cdb
+
+repo start auto device/samsung/qcom-common
+cdv device/samsung/qcom-common
+echo "qcom-common: power: Tuning and cleanups"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_qcom-common refs/changes/04/31604/1 && git cherry-pick FETCH_HEAD
+cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
 
