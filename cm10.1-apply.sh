@@ -72,12 +72,6 @@ echo "msm8660-common: cleanup device tree"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/05/31605/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto device/samsung/qcom-common
-cdv device/samsung/qcom-common
-echo "qcom-common: power: Tuning and cleanups"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_qcom-common refs/changes/04/31604/4 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto vendor/cm
 cdv vendor/cm
 echo "apns: add 'phone' APN for AT&T"
