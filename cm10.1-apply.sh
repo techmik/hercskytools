@@ -56,15 +56,26 @@ set -e
 # Known issues
 #   - Brightness controls do not work properly
 #   - Camcorder preview is very low resolution
+#   - Whole device encryption does not work
+#   - Wifi hotspot does not work
 #   - Recovery external_sd is not available
 #   - Recovery "reboot system" and "reboot recovery" simply turns power off
+# Preview1.2
+#   - Enable whole device encryption
+#   - fix: brightness slider did not take affect until lock/unlock of device
 # Preview1.1
-#   - Includes cyanogen tuning of the powerHAL (possibly fixes: CPU spends most of time at 1512 and 384 && battery life is short)
+#   - Includes cyanogen tuning of the powerHAL (fixes: CPU spends most of time at 1512 and 384 && battery life is short)
 #   - Clean up of the msm8660-common device tree
 # Preview1
 #   - first CM10.1 release
 
 ################ Apply Common Patches Below ####################
+
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "msm8660: fix broken brightness control"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/32/31632/1 && git cherry-pick FETCH_HEAD
+cdb
 
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
