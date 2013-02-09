@@ -57,9 +57,10 @@ set -e
 #   - Camcorder preview is very low resolution
 #   - Whole device encryption does not work
 #   - Wifi hotspot does not work
-#   - /external_sd is not available
 #   - Recovery external_sd is not available
 #   - Recovery "reboot system" and "reboot recovery" simply turns power off
+# Preview2.1
+#   - fix: /external_sd is not available
 # Preview2
 #   - fix: brightness slider did not take affect until lock/unlock of device
 #   - fix: CPU spends most of time at 1512 and 384 && battery life is short (cyanogen tuned the powerHAL)
@@ -68,6 +69,12 @@ set -e
 #   - first CM10.1 release
 
 ################ Apply Common Patches Below ####################
+
+repo start auto device/samsung/msm8660-common
+cdv device/samsung/msm8660-common
+echo "msm8660: create legacy symlink at /external_sd"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/95/31695/1 && git cherry-pick FETCH_HEAD
+cdb
 
 repo start auto vendor/cm
 cdv vendor/cm
