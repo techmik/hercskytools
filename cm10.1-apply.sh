@@ -70,12 +70,6 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "msm8660: create legacy symlink at /external_sd"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/95/31695/2 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto vendor/cm
 cdv vendor/cm
 echo "apns: add 'phone' APN for AT&T"
