@@ -76,6 +76,12 @@ echo "apns: add 'phone' APN for AT&T"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_vendor_cm refs/changes/87/31087/3 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto packages/apps/Camera
+cdv packages/apps/Camera
+echo "camera: add option to ignore preferred preview size for video"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Camera refs/changes/06/31806/1 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
