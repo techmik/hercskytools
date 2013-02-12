@@ -79,7 +79,7 @@ cdb
 repo start auto packages/apps/Camera
 cdv packages/apps/Camera
 echo "camera: add option to ignore preferred preview size for video"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Camera refs/changes/06/31806/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Camera refs/changes/06/31806/2 && git cherry-pick FETCH_HEAD
 cdb
 
 
