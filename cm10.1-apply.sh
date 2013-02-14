@@ -82,6 +82,12 @@ echo "camera: Add options to better control video preview size"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Camera refs/changes/06/31806/2 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto devices/samsung/celox-common
+cdv devices/samsung/celox-common
+echo "celox: enable whole disk encryption"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/84/31884/1 && git cherry-pick FETCH_HEAD
+cdb
+
 
 ################ Apply Hercules-Specific Patches Below ####################
 
