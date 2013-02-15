@@ -88,26 +88,31 @@ echo "celox: enable whole disk encryption"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/84/31884/1 && git cherry-pick FETCH_HEAD
 cdb
 
-# Testing
+# Start Testing Patches
 repo start auto hardware/qcom/display-caf
 cdv hardware/qcom/display-caf
 echo "Misc display-caf patches"
 git pull http://review.cyanogenmod.org/CyanogenMod/android_hardware_qcom_display-caf refs/changes/05/31905/1
 cdb
 
-# Testing
 repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
 echo "video: msm: Restore non-blocking overlay update support"
 git pull http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/06/31906/1
 cdb
 
-# Testing
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
 echo "msm8660: Update headers to match kernel"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/11/31911/1 && git cherry-pick FETCH_HEAD
 cdb
+
+repo start auto device/samsung/qcom-common
+cdv device/samsung/qcom-common
+echo "qcom-common: use caf display variant on msm8660"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_qcom-common refs/changes/34/31734/1 && git cherry-pick FETCH_HEAD
+cdb
+# End Testing Patches
 
 ################ Apply Hercules-Specific Patches Below ####################
 
