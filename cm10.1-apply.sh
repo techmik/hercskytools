@@ -54,19 +54,8 @@ set -e
 # Changelog
 
 # Known issues
-#   - Camcorder preview is very low resolution
-#   - Whole device encryption does not work
-#   - Wifi hotspot does not work
 #   - Recovery external_sd is not available
 #   - Recovery "reboot system" and "reboot recovery" simply turns power off
-# Preview2.1
-#   - fix: /external_sd is not available
-# Preview2
-#   - fix: brightness slider did not take affect until lock/unlock of device
-#   - fix: CPU spends most of time at 1512 and 384 && battery life is short (cyanogen tuned the powerHAL)
-#   - Clean up of the msm8660-common device tree
-# Preview1
-#   - first CM10.1 release
 
 ################ Apply Common Patches Below ####################
 
