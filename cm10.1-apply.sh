@@ -59,11 +59,17 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "msm8660: Enable Miracast feature"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/24/32024/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto device/samsung/celox-common
+#cdv device/samsung/celox-common
+#cdb
+
+#repo start auto device/samsung/msm8660-common
+#cdv device/samsung/msm8660-common
+#cdb
+
+#repo start auto device/samsung/qcom-common
+#cdv device/samsung/qcom-common
+#cdb
 
 
 ################ Apply Hercules-Specific Patches Below ####################
