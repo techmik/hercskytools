@@ -73,6 +73,12 @@ echo "msm8660: Update for new kernel and userspace"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/92/35692/3 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto frameworks/opt/telephony
+cdv frameworks/opt/telephony
+echo "SamsungQualcommUiccRIL: fix responseCallList for v7 RIL"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/95/36095/1 && git cherry-pick FETCH_HEAD
+cdb
+
 #repo start auto device/samsung/qcom-common
 #cdv device/samsung/qcom-common
 #cdb
