@@ -59,11 +59,9 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto kernel/samsung/msm8660-common
-cdv kernel/samsung/msm8660-common
-echo "Set as-instr to use printf instead of echo"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/04/36404/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto kernel/samsung/msm8660-common
+#cdv kernel/samsung/msm8660-common
+#cdb
 
 #repo start auto device/samsung/celox-common
 #cdv device/samsung/celox-common
