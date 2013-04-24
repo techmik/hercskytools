@@ -59,25 +59,19 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto device/samsung/celox-common
-cdv device/samsung/celox-common
-echo "celox-common: Enable thermald"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_celox-common refs/changes/94/35694/1 && git cherry-pick FETCH_HEAD
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "Set as-instr to use printf instead of echo"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/04/36404/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "msm8660: Add GPS HAL"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/91/35691/3 && git cherry-pick FETCH_HEAD
-echo "msm8660: Update for new kernel and userspace"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/92/35692/3 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto device/samsung/celox-common
+#cdv device/samsung/celox-common
+#cdb
 
-repo start auto frameworks/opt/telephony
-cdv frameworks/opt/telephony
-echo "SamsungQualcommUiccRIL: fix responseCallList for v7 RIL"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/95/36095/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto device/samsung/msm8660-common
+#cdv device/samsung/msm8660-common
+#cdb
 
 #repo start auto device/samsung/qcom-common
 #cdv device/samsung/qcom-common
@@ -86,24 +80,20 @@ cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
 
-if [ -e device/samsung/hercules ]; then
-repo start auto device/samsung/hercules
-cdv device/samsung/hercules
-echo "hercules: Update firmware and board name"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_hercules refs/changes/96/35696/1 && git cherry-pick FETCH_HEAD
-cdb
-fi
+#if [ -e device/samsung/hercules ]; then
+#repo start auto device/samsung/hercules
+#cdv device/samsung/hercules
+#cdb
+#fi
 
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
-if [ -e device/samsung/skyrocket ]; then
-repo start auto device/samsung/skyrocket
-cdv device/samsung/skyrocket
-echo "skyrocket: Update firmware and board name"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_skyrocket refs/changes/95/35695/1 && git cherry-pick FETCH_HEAD
-cdb
-fi
+#if [ -e device/samsung/skyrocket ]; then
+#repo start auto device/samsung/skyrocket
+#cdv device/samsung/skyrocket
+#cdb
+#fi
 
 
 ################ Apply Quincyatt-Specific Patches Below ####################
