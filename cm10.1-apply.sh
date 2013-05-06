@@ -59,11 +59,9 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto kernel/samsung/msm8660-common
-cdv kernel/samsung/msm8660-common
-echo "net/wireless: Backport stack from 3.4"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/26/37026/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto kernel/samsung/msm8660-common
+#cdv kernel/samsung/msm8660-common
+#cdb
 
 #repo start auto device/samsung/celox-common
 #cdv device/samsung/celox-common
