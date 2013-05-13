@@ -59,9 +59,13 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-#repo start auto kernel/samsung/msm8660-common
-#cdv kernel/samsung/msm8660-common
-#cdb
+repo start auto kernel/samsung/msm8660-common
+cdv kernel/samsung/msm8660-common
+echo "msm8660: disable inlining of spinlocks"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/37677/1 && git cherry-pick FETCH_HEAD
+#echo "msm8660: add additional locking protection to touckey driver"
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/21/37621/1 && git cherry-pick FETCH_HEAD
+cdb
 
 #repo start auto device/samsung/celox-common
 #cdv device/samsung/celox-common
