@@ -77,8 +77,8 @@ echo "qcom-common: add common qcom ril class"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_qcom-common refs/changes/73/38073/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto framework/opt/telephony
-cdv framework/opt/telephony
+repo start auto frameworks/opt/telephony
+cdv frameworks/opt/telephony
 echo "SamsungQcomRIL: New class and get rid of old and outdated codes"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/23 && git cherry-pick FETCH_HEAD
 cdb
