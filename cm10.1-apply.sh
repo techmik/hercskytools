@@ -59,13 +59,9 @@ set -e
 
 ################ Apply Common Patches Below ####################
 
-repo start auto kernel/samsung/msm8660-common
-cdv kernel/samsung/msm8660-common
-echo "msm8660: disable inlining of spinlocks"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/77/37677/1 && git cherry-pick FETCH_HEAD
-#echo "msm8660: add additional locking protection to touckey driver"
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/21/37621/1 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto kernel/samsung/msm8660-common
+#cdv kernel/samsung/msm8660-common
+#cdb
 
 #repo start auto device/samsung/celox-common
 #cdv device/samsung/celox-common
@@ -75,36 +71,49 @@ cdb
 #cdv device/samsung/msm8660-common
 #cdb
 
-#repo start auto device/samsung/qcom-common
-#cdv device/samsung/qcom-common
-#cdb
+repo start auto device/samsung/qcom-common
+cdv device/samsung/qcom-common
+echo "qcom-common: add common qcom ril class"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_qcom-common refs/changes/73/38073/1 && git cherry-pick FETCH_HEAD
+cdb
 
+epo start auto framework/opt/telephony
+cdv framework/opt/telephony
+echo "SamsungQcomRIL: New class and get rid of old and outdated codes"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/23 && git cherry-pick FETCH_HEAD
+cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
 
-#if [ -e device/samsung/hercules ]; then
-#repo start auto device/samsung/hercules
-#cdv device/samsung/hercules
-#cdb
-#fi
+if [ -e device/samsung/hercules ]; then
+repo start auto device/samsung/hercules
+cdv device/samsung/hercules
+echo "hercules: remove ril_class prop; moved to qcom-common"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_hercules refs/changes/61/37961/2 && git cherry-pick FETCH_HEAD
+cdb
+fi
 
 
 ################ Apply Skyrocket-Specific Patches Below ####################
 
-#if [ -e device/samsung/skyrocket ]; then
-#repo start auto device/samsung/skyrocket
-#cdv device/samsung/skyrocket
-#cdb
-#fi
+if [ -e device/samsung/skyrocket ]; then
+repo start auto device/samsung/skyrocket
+cdv device/samsung/skyrocket
+echo "skyrocket: remove ril_class prop; moved to qcom-common"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_skyrocket refs/changes/65/37965/2 && git cherry-pick FETCH_HEAD
+cdb
+fi
 
 
 ################ Apply Quincyatt-Specific Patches Below ####################
 
-#if [ -e device/samsung/quincyatt ]; then
-#repo start auto device/samsung/quincyatt
-#cdv device/samsung/quincyatt
-#cdb
-#fi
+if [ -e device/samsung/quincyatt ]; then
+repo start auto device/samsung/quincyatt
+cdv device/samsung/quincyatt
+echo "quincyatt: remove ril_class prop; moved to qcom-common"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_quincyatt refs/changes/63/37963/2 && git cherry-pick FETCH_HEAD
+cdb
+fi
 
 
 ##### SUCCESS ####
