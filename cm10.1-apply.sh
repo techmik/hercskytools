@@ -67,9 +67,11 @@ set -e
 #cdv device/samsung/celox-common
 #cdb
 
-#repo start auto device/samsung/msm8660-common
-#cdv device/samsung/msm8660-common
-#cdb
+repo start auto device/samsung/msm8660-common
+cdv device/samsung/msm8660-common
+echo "msm8660: set ro.telephony.ril.v3=needSamsungTimeDS"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/18/38218/1 && git cherry-pick FETCH_HEAD
+cdb
 
 repo start auto device/samsung/qcom-common
 cdv device/samsung/qcom-common
