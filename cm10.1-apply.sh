@@ -80,7 +80,7 @@ cdb
 repo start auto frameworks/opt/telephony
 cdv frameworks/opt/telephony
 echo "SamsungQcomRIL: New class and get rid of old and outdated codes"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/23 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/24 && git cherry-pick FETCH_HEAD
 cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
