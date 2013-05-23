@@ -69,8 +69,6 @@ set -e
 
 repo start auto device/samsung/msm8660-common
 cdv device/samsung/msm8660-common
-echo "msm8660: set ro.telephony.ril.v3=needSamsungTimeDS"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/18/38218/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/qcom-common
@@ -82,7 +80,7 @@ cdb
 repo start auto frameworks/opt/telephony
 cdv frameworks/opt/telephony
 echo "SamsungQcomRIL: New class and get rid of old and outdated codes"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/25 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/28 && git cherry-pick FETCH_HEAD
 cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
