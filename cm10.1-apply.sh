@@ -63,6 +63,8 @@ repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
 echo "msm8660: disable CONFIG_GPIO_SX150X"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/93/42893/1 && git cherry-pick FETCH_HEAD
+echo "msm8660: bring back touchkey driver from jellybean branch"
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/95/42895/1 && git cherry-pick FETCH_HEAD
 cdb
 
 #repo start auto device/samsung/celox-common
