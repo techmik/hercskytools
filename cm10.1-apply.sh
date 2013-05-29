@@ -61,8 +61,6 @@ set -e
 
 repo start auto kernel/samsung/msm8660-common
 cdv kernel/samsung/msm8660-common
-echo "msm8660: disable CONFIG_GPIO_SX150X"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/93/42893/1 && git cherry-pick FETCH_HEAD
 echo "msm8660: bring back touchkey driver from jellybean branch"
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/95/42895/1 && git cherry-pick FETCH_HEAD
 cdb
@@ -86,7 +84,7 @@ cdb
 repo start auto frameworks/opt/telephony
 cdv frameworks/opt/telephony
 echo "SamsungQcomRIL: New class and get rid of old and outdated codes"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/31 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/33 && git cherry-pick FETCH_HEAD
 cdb
 
 ################ Apply Hercules-Specific Patches Below ####################
