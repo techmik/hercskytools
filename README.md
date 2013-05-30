@@ -1,19 +1,19 @@
-CM10 Build Instructions
+CM10.1 Build Instructions
 =======================
 ```
-mkdir cm10
-cd cm10
-repo init -u git://github.com/CyanogenMod/android.git -b jellybean
+mkdir cm-10.1
+cd cm-10.1
+repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1
 ```
 
 Modify your `.repo/local_manifest.xml` as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-  <manifest>
-    <project name="TeamChopsticks/hercskytools" path="hercskytools" remote="github" revision="master" />
-        <copyfile dest="build.sh" src="build.sh" />
-  </manifest>
+<manifest>
+  <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" />
+  <project name="TeamChopsticks/hercskytools" path="hercskytools" remote="github" revision="master" />
+</manifest>
 ```
 
 ```
@@ -21,30 +21,25 @@ repo sync
 vendor/cm/get-prebuilts
 ```
 
-Auto Apply Patches
-==================
-This script will remove any topic branches named auto, then apply all patches under topic branch auto.
-
-```
-hercskytools/cm10-apply.sh
-```
-
 Build
 =====
 
 ```
 . build/envsetup.sh
-breakfast cm_skyrocket-userdebug #if building for skyrocket
-breakfast cm_hercules-userdebug #if building for hercules
+breakfast cm_skyrocket-userdebug  # only if building for skyrocket
+breakfast cm_hercules-userdebug   # only if building for hercules
+./hercskytools/cm-10.1-apply.sh   # apply our patches (done on topic branch 'auto')
 mka bacon
 ```
 
 or
 
 ---
-use buildscript
+Use the build.sh script.
 
-./build.sh clean  #cleans and clobbers
-./build.sh prepare  #abandons old branches and repo sync
-./build.sh skyrocket  #runs update script and builds for skyrocket
-./build.sh hercules  #runs update script and builds for hercules
+```
+./hercskytools/build.sh clean      # cleans and clobbers
+./hercskytools/build.sh prepare    # abandons old branches and repo sync
+./hercskytools/build.sh skyrocket  # runs update script and builds for skyrocket
+./hercskytools/build.sh hercules   # runs update script and builds for hercules
+```
