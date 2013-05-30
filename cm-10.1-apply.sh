@@ -12,27 +12,6 @@ on_exit() {
 }
 trap on_exit EXIT
 
-http_patch() {
-  PATCHNAME=$(basename $1)
-  curl -L -o $PATCHNAME -O -L $1
-  cat $PATCHNAME |patch -p1
-  rm $PATCHNAME
-}
-
-# Change directory verbose
-cdv() {
-  echo
-  echo "*****************************"
-  echo "Current Directory: $1"
-  echo "*****************************"
-  cd $BASEDIR/$1
-}
-
-# Change back to base directory
-cdb() {
-  cd $BASEDIR
-}
-
 # Sanity check
 if [ -d ../.repo ]; then
   cd ..
@@ -43,82 +22,53 @@ if [ ! -d .repo ]; then
   exit 255
 fi
 
-# Save Base Directory
-BASEDIR=$(pwd)
-
 # Abandon auto topic branch
 repo abandon auto
 set -e
 
+#
+# List of changes to apply
+#
+# Format is DIRECTORY followed by a COLON followed by a COMMA
+# SEPARATED LIST of gerrit numbers to cherry pick.
+#
+CHANGES+=('device/samsung/qcom-common:38073')
+CHANGES+=('device/samsung/msm8660-common:37948,32909')
+CHANGES+=('device/samsung/celox-common:')
+CHANGES+=('kernel/samsung/msm8660-common:42895')
+CHANGES+=('device/samsung/hercules:37961')
+CHANGES+=('device/samsung/skyrocket:37965')
+CHANGES+=('device/samsung/quincyatt:37963')
+CHANGES+=('frameworks/opt/telephony:37936')
 
-# Changelog
+#
+# Apply patches from the CHANGES array
+#
+for changes_index in "${!CHANGES[@]}"
+do
+    change_description=${CHANGES[$changes_index]}
+    temp=(${change_description//:/ })
+    project_path=${temp[0]}
+    IN=${temp[1]}
+    gerrits=(${IN//,/ })
 
-# Known issues
-#   - Recovery external_sd is not available
-#   - Recovery "reboot system" and "reboot recovery" simply turns power off
-
-################ Apply Common Patches Below ####################
-
-repo start auto kernel/samsung/msm8660-common
-cdv kernel/samsung/msm8660-common
-echo "msm8660: bring back touchkey driver from jellybean branch"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_kernel_samsung_msm8660-common refs/changes/95/42895/1 && git cherry-pick FETCH_HEAD
-cdb
-
-#repo start auto device/samsung/celox-common
-#cdv device/samsung/celox-common
-#cdb
-
-repo start auto device/samsung/msm8660-common
-cdv device/samsung/msm8660-common
-echo "msm8660: use old 4.4.3 toolchain for kernel compile"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_msm8660-common refs/changes/48/37948/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto device/samsung/qcom-common
-cdv device/samsung/qcom-common
-echo "qcom-common: add common qcom ril class"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_qcom-common refs/changes/73/38073/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto frameworks/opt/telephony
-cdv frameworks/opt/telephony
-echo "SamsungQcomRIL: New class and get rid of old and outdated codes"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/36/37936/33 && git cherry-pick FETCH_HEAD
-cdb
-
-################ Apply Hercules-Specific Patches Below ####################
-
-if [ -e device/samsung/hercules ]; then
-repo start auto device/samsung/hercules
-cdv device/samsung/hercules
-echo "hercules: remove ril_class prop; moved to qcom-common"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_hercules refs/changes/61/37961/2 && git cherry-pick FETCH_HEAD
-cdb
-fi
-
-
-################ Apply Skyrocket-Specific Patches Below ####################
-
-if [ -e device/samsung/skyrocket ]; then
-repo start auto device/samsung/skyrocket
-cdv device/samsung/skyrocket
-echo "skyrocket: remove ril_class prop; moved to qcom-common"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_skyrocket refs/changes/65/37965/2 && git cherry-pick FETCH_HEAD
-cdb
-fi
-
-
-################ Apply Quincyatt-Specific Patches Below ####################
-
-if [ -e device/samsung/quincyatt ]; then
-repo start auto device/samsung/quincyatt
-cdv device/samsung/quincyatt
-echo "quincyatt: remove ril_class prop; moved to qcom-common"
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_quincyatt refs/changes/63/37963/2 && git cherry-pick FETCH_HEAD
-cdb
-fi
-
+    if [ ${#gerrits[@]} -gt 0 ]; then
+        if [ -e $project_path ]; then
+            echo
+            echo "**********************************************************"
+            echo "Current directory: $project_path"
+            echo "**********************************************************"
+            echo "Applying: ${gerrits[@]}"
+            repo start auto $project_path
+            repo download -c $project_path ${gerrits[@]}
+        else
+            echo
+            echo "**********************************************************"
+            echo "Skipping (since it doesn't exist): $project_path"
+            echo "**********************************************************"
+        fi
+    fi
+done
 
 ##### SUCCESS ####
 SUCCESS=true
