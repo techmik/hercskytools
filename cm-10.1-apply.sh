@@ -34,15 +34,10 @@ set -e
 #
 # Gerrit numbers should have a SLASH and the desired patch number.
 #
-CHANGES+=('device/samsung/qcom-common:38073/1')
 CHANGES+=('device/samsung/msm8660-common:37948/1')
 #CHANGES+=('device/samsung/celox-common:')
-CHANGES+=('device/samsung/hercules:37961/2')
-CHANGES+=('device/samsung/skyrocket:37965/2')
-CHANGES+=('device/samsung/quincyatt:37963/2')
 CHANGES+=('kernel/samsung/msm8660-common:42895/1')
 CHANGES+=('kernel/samsung/msm8660-common:43367/3')
-CHANGES+=('frameworks/opt/telephony:37936/33')
 
 #
 # Apply patches from the CHANGES array
