@@ -39,10 +39,6 @@ except ImportError:
   urllib = imp.new_module('urllib')
   urllib.request = urllib2
 
-# Locate the repo and git binaries
-repo_bin = 'repo'
-git_bin = 'git'
-
 # Parse the command line
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
     repopick.py is a utility to simplify the process of cherry picking
@@ -63,31 +59,89 @@ parser.add_argument('change_number', nargs='+', help='change number to cherry pi
 parser.add_argument('--ignore-missing', action='store_true', help='do not error out if a patch applies to a missing directory')
 parser.add_argument('--start-branch', nargs=1, help='start the specified branch before cherry picking')
 parser.add_argument('--abandon-first', action='store_true', help='before cherry picking, abandon the branch specified in --start-branch')
-parser.add_argument('--quiet', action='store_true', help='print as little as possible')
-parser.add_argument('--verbose', action='store_true', help='print extra information to aid in debug')
+parser.add_argument('--quiet', '-q', action='store_true', help='print as little as possible')
+parser.add_argument('--verbose', '-v', action='store_true', help='print extra information to aid in debug')
 args = parser.parse_args()
 if args.start_branch == None and args.abandon_first:
     parser.error('if --abandon-first is set, you must also give the branch name with --start-branch')
+if args.quiet and args.verbose:
+    parser.error('--quiet and --verbose cannot be specified together')
 
-# Simple wrapper for os.system() that exits on error and prints out the command if --verbose
+# Helper function to determine whether a path is an executable file
+def is_exe(fpath):
+    return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+
+# Implementation of Unix 'which' in Python
+#
+# From: http://stackoverflow.com/questions/377017/test-if-executable-exists-in-python
+def which(program):
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            path = path.strip('"')
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+
+    return None
+
+# Simple wrapper for os.system() that:
+#   - exits on error
+#   - prints out the command if --verbose
+#   - suppresses all output if --quiet
 def execute_cmd(cmd):
     if args.verbose:
         print('Executing: %s' % cmd)
+    if args.quiet:
+        cmd = cmd.replace(' && ', ' &> /dev/null && ')
+        cmd = cmd + " &> /dev/null"
     if os.system(cmd):
         if not args.verbose:
             print('\nCommand that failed:\n%s' % cmd)
         sys.exit(1)
 
+# Find the necessary bins - repo
+repo_bin = which('repo')
+if repo_bin == None:
+    repo_bin = os.path.join(os.environ["HOME"], 'repo')
+    if not is_exe(repo_bin):
+        sys.stderr.write('ERROR: Could not find the repo program in either $PATH or $HOME/bin\n')
+        sys.exit(1)
+
+# Find the necessary bins - git
+git_bin = which('git')
+if not is_exe(git_bin):
+    sys.stderr.write('ERROR: Could not find the git program in $PATH\n')
+    sys.exit(1)
+
 # If --abandon-first is given, abandon the branch before starting
 if args.abandon_first:
-    if not args.quiet:
-        print('Abandoning branch: %s' % args.start_branch[0])
-    cmd = '%s abandon %s' % (repo_bin, args.start_branch[0])
-    if args.verbose:
-        print('Executing: %s' % cmd)
-    os.system(cmd)   # can't use execute_cmd() here since abandon may not find anything to do which is okay
-    if not args.quiet:
-        print('')
+    # Determine if the branch already exists; skip the abandon if it does not
+    plist = subprocess.Popen([repo_bin,"info"], stdout=subprocess.PIPE)
+    needs_abandon = False
+    while(True):
+        retcode = plist.poll()
+        pline = plist.stdout.readline().rstrip()
+        matchObj = re.match(r'Local Branches.*\[(.*)\]', pline.decode())
+        if matchObj:
+            local_branches = re.split('\s*,\s*', matchObj.group(1))
+            if any(args.start_branch[0] in s for s in local_branches):
+                needs_abandon = True
+                break
+        if(retcode is not None):
+            break
+
+    if needs_abandon:
+        # Perform the abandon only if the branch already exists
+        if not args.quiet:
+            print('Abandoning branch: %s' % args.start_branch[0])
+        cmd = '%s abandon %s' % (repo_bin, args.start_branch[0])
+        execute_cmd(cmd)
+        if not args.quiet:
+            print('')
 
 # Iterate through the requested change numbers
 for change in args.change_number:
@@ -129,7 +183,7 @@ for change in args.change_number:
 
     # Get the list of projects that repo knows about
     #   - convert the project name to a project path
-    plist = subprocess.Popen(["repo","list"], stdout=subprocess.PIPE)
+    plist = subprocess.Popen([repo_bin,"list"], stdout=subprocess.PIPE)
     while(True):
         retcode = plist.poll()
         pline = plist.stdout.readline().rstrip()
@@ -146,7 +200,7 @@ for change in args.change_number:
             print('WARNING: Skipping %d since there is no project directory: %s\n' % (change_number, project_path))
             continue;
         else:
-            sys.stderr.write('ERROR: For %d, there is no project directory: %s' % (change_number, project_path))
+            sys.stderr.write('ERROR: For %d, there is no project directory: %s\n' % (change_number, project_path))
             sys.exit(1)
 
     # If --start-branch is given, create the branch (more than once per path is okay; repo ignores gracefully)

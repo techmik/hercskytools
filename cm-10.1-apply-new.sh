@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 4.4.3 toolchain
-CHANGES+="37948 "
+#CHANGES+="37948 "
 
 # Forward port of TKEY
-CHANGES+="42895 "
+#CHANGES+="42895 "
 
 # LCD brightness
 CHANGES+="43367 "
