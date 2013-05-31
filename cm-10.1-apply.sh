@@ -41,7 +41,7 @@ CHANGES+=('device/samsung/hercules:37961/2')
 CHANGES+=('device/samsung/skyrocket:37965/2')
 CHANGES+=('device/samsung/quincyatt:37963/2')
 CHANGES+=('kernel/samsung/msm8660-common:42895/1')
-CHANGES+=('kernel/samsung/msm8660-common:43367/1')
+CHANGES+=('kernel/samsung/msm8660-common:43367/3')
 CHANGES+=('frameworks/opt/telephony:37936/33')
 
 #
