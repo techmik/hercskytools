@@ -1,16 +1,13 @@
 #!/bin/bash
 
-# 4.4.3 toolchain
-CHANGES+="37948 "
-
 # Forward port of TKEY
 #CHANGES+="42895 "
 
-# LCD brightness
-CHANGES+="43367 "
+# LCD code cleanup
+CHANGES+="43673 "
 
-# Hang up fix
-CHANGES+="43610 "
+# LCD reset enabled
+CHANGES+="43679 "
 
 # Do the cherry-picking
 BRANCH_NAME="auto"
