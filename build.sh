@@ -22,25 +22,53 @@ START=$(date +%s)
                 ;;
 
         skyrocket)
-                ./hercskytools/cm10-${COMMAND}-apply.sh
+                ./hercskytools/cm10.1-apply.sh
                 . build/envsetup.sh
                 ./vendor/cm/get-prebuilts
-                brunch cm_skyrocket-eng
+		if [ "$ADDITIONAL" -eq "eng" ]
+		then
+    			brunch cm_skyrocket-eng
+		
+		elif [ "$ADDITIONAL" -eq "userdebug" ]
+    			brunch cm_skyrocket-userdebug
+		
+		else
+    			brunch cm_skyrocket-userdebug
+		fi
                 ;;
         hercules)
-                ./hercskytools/cm10-${COMMAND}-apply.sh
+                ./hercskytools/cm10.1-apply.sh
                 . build/envsetup.sh
                 ./vendor/cm/get-prebuilts
-                brunch cm_hercules-eng
+                if [ "$ADDITIONAL" -eq "eng" ]
+                then
+                        brunch cm_hercules-eng
+                
+                elif [ "$ADDITIONAL" -eq "userdebug" ]
+                        brunch cm_hercules-userdebug
+                
+                else
+                        brunch cm_hercules-userdebug
+                fi
                 ;;
         quincyatt)
-                ./hercskytools/cm10-${COMMAND}-apply.sh
+                ./hercskytools/cm10.1-apply.sh
                 . build/envsetup.sh
                 ./vendor/cm/get-prebuilts
-                brunch cm_quincyatt-eng
+		if [ "$ADDITIONAL" -eq "eng" ]
+                then
+                        brunch cm_quincyatt-eng
+                
+                elif [ "$ADDITIONAL" -eq "userdebug" ]
+                        brunch cm_quincyatt-userdebug
+                
+                else
+                        brunch cm_quincyatt-userdebug
+                fi
                 ;;
         *)
                 echo -e "Usage: $0 DEVICE ADDITIONAL"
+		echo -e "ADDITONAL: eng, userdebug"
                 echo -e "Example: ./build.sh skyrocket"
                 echo -e "Supported Devices: skyrocket, hercules"
                 echo -e "Use: ./build.sh clean to make clobber"
