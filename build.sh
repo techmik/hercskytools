@@ -30,6 +30,7 @@ START=$(date +%s)
     			brunch cm_skyrocket-eng
 		
 		elif [ "$ADDITIONAL" -eq "userdebug" ]
+		then
     			brunch cm_skyrocket-userdebug
 		
 		else
@@ -45,6 +46,7 @@ START=$(date +%s)
                         brunch cm_hercules-eng
                 
                 elif [ "$ADDITIONAL" -eq "userdebug" ]
+		then
                         brunch cm_hercules-userdebug
                 
                 else
@@ -60,6 +62,7 @@ START=$(date +%s)
                         brunch cm_quincyatt-eng
                 
                 elif [ "$ADDITIONAL" -eq "userdebug" ]
+		then
                         brunch cm_quincyatt-userdebug
                 
                 else
