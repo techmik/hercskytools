@@ -71,8 +71,8 @@ START=$(date +%s)
                 ;;
         *)
                 echo -e "Usage: $0 DEVICE ADDITIONAL"
-		echo -e "ADDITONAL: eng, userdebug"
-                echo -e "Example: ./build.sh skyrocket"
+		echo -e "ADDITONAL: eng, userdebug (default)"
+                echo -e "Example: ./build.sh skyrocket eng"
                 echo -e "Supported Devices: skyrocket, hercules"
                 echo -e "Use: ./build.sh clean to make clobber"
                 echo -e "Use: ./build.sh prepare to repo sync"
