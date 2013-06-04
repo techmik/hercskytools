@@ -22,7 +22,7 @@ START=$(date +%s)
                 ;;
 
         skyrocket)
-                ./hercskytools/cm10.1-apply.sh
+                ./hercskytools/cm-10.1-apply.sh
                 . build/envsetup.sh
                 ./vendor/cm/get-prebuilts
 		if [ $ADDITIONAL = "eng" ]
@@ -38,7 +38,7 @@ START=$(date +%s)
 		fi
                 ;;
         hercules)
-                ./hercskytools/cm10.1-apply.sh
+                ./hercskytools/cm-10.1-apply.sh
                 . build/envsetup.sh
                 ./vendor/cm/get-prebuilts
                 if [ $ADDITIONAL = "eng" ]
@@ -54,7 +54,7 @@ START=$(date +%s)
                 fi
                 ;;
         quincyatt)
-                ./hercskytools/cm10.1-apply.sh
+                ./hercskytools/cm-10.1-apply.sh
                 . build/envsetup.sh
                 ./vendor/cm/get-prebuilts
 		if [ $ADDITIONAL = "eng" ]
