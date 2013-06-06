@@ -6,8 +6,14 @@
 # LCD code cleanup
 CHANGES+="43673 "
 
-# LCD reset enabled
-CHANGES+="43679 "
+# LCD backlight/brightness lock
+CHANGES+="43732 "
+
+# LDC debugging code
+CHANGES+="43793 "
+
+# LCD disable late resume
+CHANGES+="43804 "
 
 # Do the cherry-picking
 BRANCH_NAME="auto"
