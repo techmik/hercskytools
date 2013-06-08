@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # msm serial: bulk update from caf jb_2.5
-CHANGES+=(43791)
+#CHANGES+=(43791)
 
 # bluesleep: update from jf kernel
 CHANGES+=(43687)
