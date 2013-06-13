@@ -9,6 +9,9 @@ CHANGES+=(42894)
 # cpufreq: enforce governor to stay in sync across CPU cores
 CHANGES+=(43536)
 
+# Fix VOIP
+CHANGES+=(44156)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
