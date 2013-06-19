@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 COMMAND="$1"
 ADDITIONAL="$2"
 
