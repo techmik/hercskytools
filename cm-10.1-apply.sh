@@ -15,6 +15,12 @@ CHANGES+=(43536)
 # Fix VOIP
 CHANGES+=(44156)
 
+# Fix compiling of media
+CHANGES+=(44476)
+
+# Use caf media variant
+CHANGES+=(44477)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
