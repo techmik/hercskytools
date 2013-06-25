@@ -12,9 +12,6 @@ CHANGES+=(42894)
 # cpufreq: enforce governor to stay in sync across CPU cores
 CHANGES+=(43536)
 
-# Fix VOIP on Samsung devices
-CHANGES+=(44532 44533)
-
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
