@@ -7,7 +7,10 @@ CHANGES+=(44336 44456 44457)
 #CHANGES+=(44392 38221 38256)
 
 # BT
-CHANGES+=(44785)
+#CHANGES+=(44785)
+
+# Google Edition kernel
+CHANGES+=(44819)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
