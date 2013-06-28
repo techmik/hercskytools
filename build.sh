@@ -26,15 +26,16 @@ START=$(date +%s)
         skyrocket)
                 ./hercskytools/cm-10.1-apply.sh
                 . build/envsetup.sh
+		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
 		if [ "$ADDITIONAL" = "eng" ]
 		then
     			brunch cm_skyrocket-eng
-		
+
 		elif [ "$ADDITIONAL" = "userdebug" ]
 		then
     			brunch cm_skyrocket-userdebug
-		
+
 		else
     			brunch cm_skyrocket-userdebug
 		fi
@@ -42,15 +43,16 @@ START=$(date +%s)
         hercules)
                 ./hercskytools/cm-10.1-apply.sh
                 . build/envsetup.sh
+		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
                 if [ "$ADDITIONAL" = "eng" ]
                 then
                         brunch cm_hercules-eng
-                
+
                 elif [ "$ADDITIONAL" = "userdebug" ]
 		then
                         brunch cm_hercules-userdebug
-                
+
                 else
                         brunch cm_hercules-userdebug
                 fi
@@ -58,15 +60,16 @@ START=$(date +%s)
         quincyatt)
                 ./hercskytools/cm-10.1-apply.sh
                 . build/envsetup.sh
+		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
 		if [ "$ADDITIONAL" = "eng" ]
                 then
                         brunch cm_quincyatt-eng
-                
+
                 elif [ "$ADDITIONAL" = "userdebug" ]
 		then
                         brunch cm_quincyatt-userdebug
-                
+
                 else
                         brunch cm_quincyatt-userdebug
                 fi
