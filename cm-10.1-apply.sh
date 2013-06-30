@@ -13,7 +13,7 @@ CHANGES+=(42894)
 CHANGES+=(43536)
 
 # Voip fixes for Samsung
-CHANGES+=(44738 44740 44741)
+CHANGES+=(44738 44962 44963 44964 44880)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
