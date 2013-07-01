@@ -21,6 +21,9 @@ CHANGES+=(44849 44728 44845)
 # Kconfig fix
 CHANGES+=(44979)
 
+# CCACHE_BASEDIR override
+CHANGES+=(44949)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
