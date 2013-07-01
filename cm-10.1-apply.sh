@@ -24,6 +24,9 @@ CHANGES+=(44979)
 # CCACHE_BASEDIR override
 CHANGES+=(44949)
 
+# Radio version check
+CHANGES+=(44985 44984 44983)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
