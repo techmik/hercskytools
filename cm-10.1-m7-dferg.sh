@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Repopick enhancements
-CHANGES+=(44336 44456 44457)
+# template
+CHANGES+=(12345)
 
 # Do the cherry-picking
-./build/tools/repopick.py -b ${CHANGES[@]}
+#./build/tools/repopick.py -b ${CHANGES[@]}
 
