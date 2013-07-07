@@ -10,10 +10,12 @@ CHANGES+=(42894)
 CHANGES+=(43536)
 
 # Changes for GCC 4.6
-CHANGES+=(44849 44728 44845)
-
-# Kconfig fix
-CHANGES+=(44979)
+# - use 4.6 instead of 4.4.3
+CHANGES+=(44849)
+# - code clean ups
+CHANGES+=(44728)
+# - libpng: fix compiler warnings
+CHANGES+=(44845)
 
 # CCACHE_BASEDIR override
 CHANGES+=(44949)
