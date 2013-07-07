@@ -3,9 +3,6 @@
 # Mutex protection in TKEY
 CHANGES+=(37621)
 
-# GPIO config fix in TKEY
-CHANGES+=(42894)
-
 # Changes for GCC 4.6
 # - use 4.6 instead of 4.4.3
 CHANGES+=(44849)
