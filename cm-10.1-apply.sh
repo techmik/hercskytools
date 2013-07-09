@@ -1,8 +1,14 @@
 #!/bin/bash
 
-# Changes for GCC 4.6
-# - code clean ups
-CHANGES+=(44728)
+# Kernel cleanups
+# - cifs: use offsetof macro
+CHANGES+=(45312)
+# - clean up uninitialized variables
+CHANGES+=(45313)
+# - fix Kconfig error for INPUT_YAS529_POSITION
+CHANGES+=(45314)
+
+# Misc cleanups
 # - libpng: fix compiler warnings
 CHANGES+=(44845)
 
