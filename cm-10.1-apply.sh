@@ -7,6 +7,8 @@ CHANGES+=(45312)
 CHANGES+=(45313)
 # - fix Kconfig error for INPUT_YAS529_POSITION
 CHANGES+=(45314)
+# - build optimizations for gcc4.6
+CHANGES+=(45324)
 
 # Misc cleanups
 # - libpng: fix compiler warnings
