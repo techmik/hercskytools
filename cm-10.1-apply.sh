@@ -1,12 +1,6 @@
 #!/bin/bash
 
 # Kernel cleanups
-# - cifs: use offsetof macro
-CHANGES+=(45312)
-# - clean up uninitialized variables
-CHANGES+=(45313)
-# - fix Kconfig error for INPUT_YAS529_POSITION
-CHANGES+=(45314)
 # - build optimizations for gcc4.6
 CHANGES+=(45324)
 
