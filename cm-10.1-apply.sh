@@ -10,6 +10,9 @@ CHANGES+=(44949)
 # Radio version check - Hercules
 CHANGES+=(44983)
 
+# SELinux
+CHANGES+=(45527 45479)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
