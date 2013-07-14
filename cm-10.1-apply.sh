@@ -2,7 +2,7 @@
 
 # Touchkey Driver
 # - backlight notification
-CHANGES+=(45347)
+# CHANGES+=(45347)
 
 # Misc cleanups
 # - libpng: fix compiler warnings
