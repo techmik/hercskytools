@@ -15,7 +15,7 @@ CHANGES+=(44949)
 CHANGES+=(44983)
 
 # SELinux
-CHANGES+=(45527 45750)
+CHANGES+=(45527)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
