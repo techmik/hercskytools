@@ -4,10 +4,6 @@
 # - backlight notification
 CHANGES+=(45646 45648)
 
-# Misc cleanups
-# - libpng: fix compiler warnings
-CHANGES+=(44845)
-
 # CCACHE_BASEDIR override
 CHANGES+=(44949)
 
