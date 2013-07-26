@@ -3,8 +3,8 @@
 # use caf media variant
 CHANGES+=(46059)
 
-# update gps code
-CHANGES+=(46060)
+# update gps header
+CHANGES+=(46063)
 
 # NativeNfcManager: fix build
 CHANGES+=(46040)
