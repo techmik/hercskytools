@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Android Device common
-CHANGES+=(46066 46080 46081)
+CHANGES+=(46080)
 
 # DashPlayer: make jb_mr2 compatible
 CHANGES+=(46086)
