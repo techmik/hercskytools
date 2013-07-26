@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# TARGET_CPU_VARIANT
-CHANGES+=(46053)
+# use caf media variant
+CHANGES+=(46059)
+
+# update gps code
+CHANGES+=(46060)
 
 # NativeNfcManager: fix build
 CHANGES+=(46040)
