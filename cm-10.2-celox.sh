@@ -15,6 +15,9 @@ CHANGES+=(46086)
 #Use display-caf for QCOM_BSP
 CHANGES+=(46183)
 
+#hwc: Add support for smooth streaming feature.
+CHANGES+=(46205)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
