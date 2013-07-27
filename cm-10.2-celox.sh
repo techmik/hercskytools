@@ -7,7 +7,7 @@ CHANGES+=(46107)
 CHANGES+=(46106)
 
 # gralloc (display-caf)
-CHANGED+=(46166)
+CHANGES+=(46166)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
