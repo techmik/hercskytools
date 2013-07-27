@@ -23,7 +23,7 @@ CHANGES+=(46205)
 CHANGES+=(46206)
 #   msm: vidc: set EOS on output buffer pending transaction
 CHANGES+=(42607)
-#v    idc: Fix EOS handling if video h/w has a frame in transaction
+#   idc: Fix EOS handling if video h/w has a frame in transaction
 CHANGES+=(42608)
 #   msm: vidc: add support for the bitstream_restrict flag
 CHANGEs+=(42609)
