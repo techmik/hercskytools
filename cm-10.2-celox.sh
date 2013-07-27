@@ -22,11 +22,11 @@ CHANGES+=(46205)
 #   msm: vidc: Reset stop_called state when START is called
 CHANGES+=(46206)
 #   msm: vidc: set EOS on output buffer pending transaction
-CHANGES+=(42607)
+CHANGES+=(46207)
 #   idc: Fix EOS handling if video h/w has a frame in transaction
-CHANGES+=(42608)
+CHANGES+=(46208)
 #   msm: vidc: add support for the bitstream_restrict flag
-CHANGEs+=(42609)
+CHANGEs+=(46209)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
