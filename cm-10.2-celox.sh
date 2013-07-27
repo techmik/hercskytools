@@ -12,6 +12,9 @@ CHANGES+=(46166)
 # DashPlayer: make jb_mr2 compatible
 CHANGES+=(46086)
 
+#Use display-caf for QCOM_BSP
+CHANGES+=(46183)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
