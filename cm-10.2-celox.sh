@@ -26,7 +26,7 @@ CHANGES+=(46207)
 #   idc: Fix EOS handling if video h/w has a frame in transaction
 CHANGES+=(46208)
 #   msm: vidc: add support for the bitstream_restrict flag
-CHANGEs+=(46209)
+CHANGES+=(46209)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
