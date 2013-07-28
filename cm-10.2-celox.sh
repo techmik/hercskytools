@@ -34,9 +34,6 @@ CHANGES+=(46276)
 # mm-video: fix pointer syntax error to build omx_vdec
 CHANGES+=(46277)
 
-# ping: add exec_type
-CHANGES+=(46278)
-
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
