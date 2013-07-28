@@ -28,6 +28,9 @@ CHANGES+=(46208)
 #   msm: vidc: add support for the bitstream_restrict flag
 CHANGES+=(46209)
 
+#qcom hardware build error fix
+CHANGES+=(46249)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
