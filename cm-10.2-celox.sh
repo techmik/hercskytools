@@ -28,6 +28,9 @@ CHANGES+=(46208)
 #   msm: vidc: add support for the bitstream_restrict flag
 CHANGES+=(46209)
 
+# mm-video: revert usage of flag GRALLOC_USAGE_PRIVATE_CP_BUFFER
+CHANGES+=(46276)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
