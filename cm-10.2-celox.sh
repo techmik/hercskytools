@@ -31,7 +31,7 @@ CHANGES+=(46209)
 # mm-video: revert usage of flag GRALLOC_USAGE_PRIVATE_CP_BUFFER
 CHANGES+=(46276)
 
-# mm-video: fix pointer syntax error to build omx_vdec
+# mm-video: remove unneeded code from merge
 CHANGES+=(46277)
 
 # Do the cherry-picking
