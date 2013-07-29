@@ -18,16 +18,6 @@ CHANGES+=(46183)
 #hwc: Add support for smooth streaming feature.
 CHANGES+=(46205)
 
-#KERNEL CHANGES
-#   msm: vidc: Reset stop_called state when START is called
-CHANGES+=(46206)
-#   msm: vidc: set EOS on output buffer pending transaction
-CHANGES+=(46207)
-#   idc: Fix EOS handling if video h/w has a frame in transaction
-CHANGES+=(46208)
-#   msm: vidc: add support for the bitstream_restrict flag
-CHANGES+=(46209)
-
 # mm-video: revert usage of flag GRALLOC_USAGE_PRIVATE_CP_BUFFER
 CHANGES+=(46276)
 
