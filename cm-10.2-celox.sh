@@ -12,6 +12,9 @@ CHANGES+=(46086)
 # Use display-caf for QCOM_BSP
 CHANGES+=(46183)
 
+# gralloc: Add workaround for Jellybean camera drivers
+CHANGES+=(46310)
+
 # hwc: Add support for smooth streaming feature.
 CHANGES+=(46205)
 
