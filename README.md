@@ -12,8 +12,8 @@ Modify your `.repo/local_manifest.xml` as follows:
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" />
-  <project name="TeamChopsticks/hercskytools" path="hercskytools" remote="github" revision="master" 
-  src="hercskytools/build.sh" dest="build.sh" />
+  <project name="TeamChopsticks/hercskytools" path="hercskytools" remote="github" revision="master">
+   <copyfile src="/hercskytools/build.sh" dest="build.sh" />
 </manifest>
 ```
 
