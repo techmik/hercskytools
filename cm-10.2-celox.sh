@@ -18,6 +18,9 @@ CHANGES+=(46310)
 # mm-video: revert usage of flag GRALLOC_USAGE_PRIVATE_CP_BUFFER
 CHANGES+=(46276)
 
+# libstagefright: Add legacy LPAPlayer
+CHANGES+=(46451)
+
 # msm8660: use legacy alsa audio
 CHANGES+=(46450)
 
