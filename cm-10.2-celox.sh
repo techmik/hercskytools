@@ -21,8 +21,8 @@ CHANGES+=(46276)
 # libstagefright: Add legacy LPAPlayer
 CHANGES+=(46451)
 
-# msm8660: use legacy alsa audio
-CHANGES+=(46450)
+# add missing platforms
+CHANGES+=(46514)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
