@@ -21,6 +21,9 @@ CHANGES+=(46205)
 # mm-video: revert usage of flag GRALLOC_USAGE_PRIVATE_CP_BUFFER
 CHANGES+=(46276)
 
+# msm8660: use legacy alsa audio
+CHANGES+=(46450)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
