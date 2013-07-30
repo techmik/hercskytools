@@ -17,11 +17,6 @@ START=$(date +%s)
                 make clobber
                 exit
                 ;;
-        prepare)
-                repo abandon auto
-                repo sync -j8
-                exit
-                ;;
 
         skyrocket-10.1)
                 ./hercskytools/cm-10.1-celox.sh
@@ -155,7 +150,7 @@ END=$(date +%s)
 ELAPSED=$((END - START))
 E_MIN=$((ELAPSED / 60))
 E_SEC=$((ELAPSED - E_MIN * 60))
-printf "Elapsed: "
+printf "${txtred}Elapsed: "
 [ $E_MIN != 0 ] && printf "%d min(s) " $E_MIN
-printf "%d sec(s)\n " $E_SEC
+printf "%d sec(s)\n ${txtred}" $E_SEC
 
