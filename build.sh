@@ -23,8 +23,8 @@ START=$(date +%s)
                 exit
                 ;;
 
-        skyrocket)
-                ./hercskytools/cm-10.1-apply.sh
+        skyrocket-10.1)
+                ./hercskytools/cm-10.1-celox.sh
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -40,8 +40,27 @@ START=$(date +%s)
     			brunch cm_skyrocket-userdebug
 		fi
                 ;;
-        hercules)
-                ./hercskytools/cm-10.1-apply.sh
+
+        skyrocket-10.2)
+                ./hercskytools/cm-10.2-celox.sh
+                . build/envsetup.sh
+		export CCACHE_BASEDIR="$HOME"
+                ./vendor/cm/get-prebuilts
+		if [ "$ADDITIONAL" = "eng" ]
+		then
+    			brunch cm_skyrocket-eng
+
+		elif [ "$ADDITIONAL" = "userdebug" ]
+		then
+    			brunch cm_skyrocket-userdebug
+
+		else
+    			brunch cm_skyrocket-userdebug
+		fi
+                ;;
+
+        hercules-10.1)
+                ./hercskytools/cm-10.1-celox.sh
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -57,8 +76,54 @@ START=$(date +%s)
                         brunch cm_hercules-userdebug
                 fi
                 ;;
-        quincyatt)
-                ./hercskytools/cm-10.1-apply.sh
+
+        hercules-10.2)
+                ./hercskytools/cm-10.2-celox.sh
+                . build/envsetup.sh
+		export CCACHE_BASEDIR="$HOME"
+                ./vendor/cm/get-prebuilts
+                if [ "$ADDITIONAL" = "eng" ]
+                then
+                        brunch cm_hercules-eng
+
+                elif [ "$ADDITIONAL" = "userdebug" ]
+		then
+                        brunch cm_hercules-userdebug
+
+                else
+                        brunch cm_hercules-userdebug
+                fi
+                ;;
+
+        quincyatt-10.1)
+                ./hercskytools/cm-10.1-celox.sh
+                . build/envsetup.sh
+		export CCACHE_BASEDIR="$HOME"
+                ./vendor/cm/get-prebuilts
+		if [ "$ADDITIONAL" = "eng" ]
+                then
+                        brunch cm_quincyatt-eng
+
+                elif [ "$ADDITIONAL" = "userdebug" ]
+		then
+                        brunch cm_quincyatt-userdebug
+
+                else
+                        brunch cm_quincyatt-userdebug
+                fi
+                ;;
+        *)
+                echo -e "Usage: $0 DEVICE ADDITIONAL"
+		echo -e "ADDITONAL: eng, userdebug (default)"
+                echo -e "Example: ./build.sh skyrocket eng"
+                echo -e "Supported Devices: skyrocket, hercules"
+                echo -e "Use: ./build.sh clean to make clobber"
+                echo -e "Use: ./build.sh prepare to repo sync"
+                exit 2
+                 ;;
+
+        quincyatt-10.2)
+                ./hercskytools/cm-10.2-celox.sh
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
