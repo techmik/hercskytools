@@ -21,9 +21,6 @@ CHANGES+=(46276)
 # libstagefright: Add legacy LPAPlayer
 CHANGES+=(46451)
 
-# add missing platforms
-CHANGES+=(46514)
-
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
