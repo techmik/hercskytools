@@ -8,7 +8,7 @@ CHANGES+=(46166)
 
 # libgralloc:  Change ionFlags for GRALLOC_USAGE_PRIVATE_MM_HEAP case
 #   - fixes secure memory crash in OMX
-CHANGES+=(464521)
+CHANGES+=(46521)
 
 # DashPlayer: make jb_mr2 compatible
 CHANGES+=(46086)
