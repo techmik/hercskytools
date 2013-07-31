@@ -18,6 +18,11 @@ START=$(date +%s)
                 exit
                 ;;
 
+	prepare)
+		repo abandon auto
+		repo sync -j8
+		exit
+
         skyrocket-10.1)
                 ./hercskytools/cm-10.1-celox.sh
                 . build/envsetup.sh
