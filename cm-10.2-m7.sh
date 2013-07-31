@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# SELinux
-CHANGES+=(45841)
+# Auto brightness
+CHANGES+=(46609 46610)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
