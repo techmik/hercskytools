@@ -31,9 +31,6 @@ CHANGES+=(46624)
 # msm8660: move Camera overlay and update
 CHANGES+=(46625)
 
-# msm8660: allow TelephonyManager to read /proc/cmdline
-CHANGES+=(46626)
-
 # msm8660: support Samsung extended AGPS
 CHANGES+=(46629)
 
