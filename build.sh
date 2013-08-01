@@ -141,7 +141,7 @@ START=$(date +%s)
                 fi
                 ;;
         *)
-                echo -e "Usage: $0 DEVICE ADDITIONAL"
+                echo -e "Usage: $0 DEVICE-BRANCH ADDITIONAL"
 		echo -e "ADDITONAL: eng, userdebug (default)"
                 echo -e "Example: ./build.sh skyrocket-10.1 eng"
                 echo -e "Supported Devices: skyrocket, hercules"
