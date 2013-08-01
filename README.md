@@ -42,7 +42,7 @@ Use the build.sh script.
 ./hercskytools/build.sh clean      # cleans and clobbers
 ./hercskytools/build.sh prepare    # abandons old branches and repo sync
 ./hercskytools/build.sh skyrocket-10.1  # runs update script and builds for skyrocket cm-10.1
-./hercskytools/build.sh skyrocket-10.2  # runs update script and builds for skyrocket cm-10.1
+./hercskytools/build.sh skyrocket-10.2  # runs update script and builds for skyrocket cm-10.2
 ./hercskytools/build.sh hercules-10.1   # runs update script and builds for hercules cm-10.1
 ./hercskytools/build.sh hercules-10.2   # runs update script and builds for hercules cm-10.2
 ```
