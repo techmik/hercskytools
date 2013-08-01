@@ -6,8 +6,8 @@ CHANGES+=(46609 46610)
 # Contact preloading
 CHANGES+=(46386)
 
-# Blacklist
-CHANGES+=(46382 46356 46359 46353 46354)
+# Audio kernel update
+CHANGES+=(46742)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
