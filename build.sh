@@ -114,9 +114,9 @@ START=$(date +%s)
                 fi
                 ;;
         *)
-                echo -e "Usage: $0 DEVICE ADDITIONAL"
+                echo -e "Usage: $0 DEVICE-BRANCH ADDITIONAL"
 		echo -e "ADDITONAL: eng, userdebug (default)"
-                echo -e "Example: ./build.sh skyrocket eng"
+                echo -e "Example: ./build.sh skyrocket-10.1 eng"
                 echo -e "Supported Devices: skyrocket, hercules"
                 echo -e "Use: ./build.sh clean to make clobber"
                 echo -e "Use: ./build.sh prepare to repo sync"
@@ -143,7 +143,7 @@ START=$(date +%s)
         *)
                 echo -e "Usage: $0 DEVICE ADDITIONAL"
 		echo -e "ADDITONAL: eng, userdebug (default)"
-                echo -e "Example: ./build.sh skyrocket eng"
+                echo -e "Example: ./build.sh skyrocket-10.1 eng"
                 echo -e "Supported Devices: skyrocket, hercules"
                 echo -e "Use: ./build.sh clean to make clobber"
                 echo -e "Use: ./build.sh prepare to repo sync"
