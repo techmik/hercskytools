@@ -1,4 +1,4 @@
-CM10.2 Build Instructions (For Skyrocket & Hercules)
+CM10.2 Build Instructions
 =======================
 ```
 mkdir cm-10.2
@@ -17,6 +17,8 @@ Modify your `.repo/local_manifest.xml` as follows:
 </manifest>
 ```
 
+From your cm-10.2 directory, execute the following to pull all source code from github:
+
 ```
 repo sync
 vendor/cm/get-prebuilts
@@ -24,6 +26,8 @@ vendor/cm/get-prebuilts
 
 Build
 =====
+
+Build manually without Team Chopsticks gerrit patches:
 
 ```
 . build/envsetup.sh
@@ -33,16 +37,15 @@ breakfast cm_hercules-userdebug   # only if building for hercules
 mka bacon
 ```
 
-or
-
----
-Use the build.sh script.
+Build with the Team Chopsticks build tools to include gerrit patches:
 
 ```
-./hercskytools/build.sh clean      # cleans and clobbers
-./hercskytools/build.sh prepare    # abandons old branches and repo sync
+./hercskytools/build.sh clean           # cleans and clobbers
+./hercskytools/build.sh prepare         # abandons old branches and repo sync
 ./hercskytools/build.sh skyrocket-10.1  # runs update script and builds for skyrocket cm-10.1
 ./hercskytools/build.sh skyrocket-10.2  # runs update script and builds for skyrocket cm-10.2
 ./hercskytools/build.sh hercules-10.1   # runs update script and builds for hercules cm-10.1
 ./hercskytools/build.sh hercules-10.2   # runs update script and builds for hercules cm-10.2
 ```
+
+*Note: For the CM10.1 builds noted above, you will need to reset your source repositories to the cm-10.1 branch.
