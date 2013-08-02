@@ -27,23 +27,26 @@ vendor/cm/get-prebuilts
 Build
 =====
 
-Build manually without Team Chopsticks gerrit patches:
+Build manually:
 
 ```
 . build/envsetup.sh
+make clean                        # remove the curent out directory for a clean build
 breakfast cm_skyrocket-userdebug  # only if building for skyrocket
 breakfast cm_hercules-userdebug   # only if building for hercules
 ./hercskytools/cm-10.2-celox.sh   # apply our patches (done on topic branch 'auto')
 mka bacon
 ```
 
-Build with the Team Chopsticks build tools to include gerrit patches:
+Build with the Team Chopsticks build tools to include gerrit patches automatically:
 
 ```
 ./hercskytools/build.sh clean           # cleans and clobbers
 ./hercskytools/build.sh prepare         # abandons old branches and repo sync
+
 ./hercskytools/build.sh skyrocket-10.1  # runs update script and builds for skyrocket cm-10.1
 ./hercskytools/build.sh skyrocket-10.2  # runs update script and builds for skyrocket cm-10.2
+
 ./hercskytools/build.sh hercules-10.1   # runs update script and builds for hercules cm-10.1
 ./hercskytools/build.sh hercules-10.2   # runs update script and builds for hercules cm-10.2
 ```
