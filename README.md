@@ -1,9 +1,9 @@
-CM10.1 Build Instructions
+CM10.2 Build Instructions (For Skyrocket & Hercules)
 =======================
 ```
-mkdir cm-10.1
-cd cm-10.1
-repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1
+mkdir cm-10.2
+cd cm-10.2
+repo init -u git://github.com/CyanogenMod/android.git -b cm-10.2
 ```
 
 Modify your `.repo/local_manifest.xml` as follows:
@@ -29,7 +29,7 @@ Build
 . build/envsetup.sh
 breakfast cm_skyrocket-userdebug  # only if building for skyrocket
 breakfast cm_hercules-userdebug   # only if building for hercules
-./hercskytools/cm-10.1-apply.sh   # apply our patches (done on topic branch 'auto')
+./hercskytools/cm-10.2-celox.sh   # apply our patches (done on topic branch 'auto')
 mka bacon
 ```
 
