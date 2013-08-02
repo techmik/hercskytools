@@ -14,7 +14,7 @@ CHANGES+=(46521)
 CHANGES+=(46086)
 
 # Use display-caf for QCOM_BSP
-CHANGES+=(46183)
+#CHANGES+=(46183)
 
 # mm-video: revert usage of flag GRALLOC_USAGE_PRIVATE_CP_BUFFER
 CHANGES+=(46276)
