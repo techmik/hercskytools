@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# BT audio fix
-CHANGES+=(46777 46768)
-
 # Auto brightness
 CHANGES+=(46609 46610)
 
