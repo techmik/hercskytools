@@ -19,7 +19,7 @@ START=$(date +%s)
                 ;;
 
 	    prepare)
-		        repo abandon auto
+		        (repo abandon auto && repo sync j8) ||
 		        repo sync -j8
 		        exit
                 ;;
@@ -113,15 +113,6 @@ START=$(date +%s)
                         brunch cm_quincyatt-userdebug
                 fi
                 ;;
-        *)
-                echo -e "Usage: $0 DEVICE-BRANCH ADDITIONAL"
-		echo -e "ADDITONAL: eng, userdebug (default)"
-                echo -e "Example: ./build.sh skyrocket-10.1 eng"
-                echo -e "Supported Devices: skyrocket, hercules"
-                echo -e "Use: ./build.sh clean to make clobber"
-                echo -e "Use: ./build.sh prepare to repo sync"
-                exit 2
-                 ;;
 
         quincyatt-10.2)
                 ./hercskytools/cm-10.2-celox.sh
@@ -144,7 +135,7 @@ START=$(date +%s)
                 echo -e "Usage: $0 DEVICE-BRANCH ADDITIONAL"
 		echo -e "ADDITONAL: eng, userdebug (default)"
                 echo -e "Example: ./build.sh skyrocket-10.1 eng"
-                echo -e "Supported Devices: skyrocket, hercules"
+                echo -e "Supported Devices: skyrocket, hercules, quincyatt"
                 echo -e "Use: ./build.sh clean to make clobber"
                 echo -e "Use: ./build.sh prepare to repo sync"
                 exit 2
