@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Auto brightness
-CHANGES+=(46609 46610)
+CHANGES+=(47064 46609 46610)
 
 # Contact preloading
 CHANGES+=(46386)
