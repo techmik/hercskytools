@@ -18,9 +18,6 @@ CHANGES+=(46086)
 # Use display-caf for QCOM_BSP
 #CHANGES+=(46183)
 
-# libstagefright: Add legacy LPAPlayer
-CHANGES+=(46451)
-
 # msm8660: enable Qualcomm AV enhancements
 CHANGES+=(46624)
 
