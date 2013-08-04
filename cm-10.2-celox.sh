@@ -1,7 +1,5 @@
 #!/bin/bash
 
-repo abandon auto &&
-
 # audio/msm8660 fixes
 CHANGES+=(46107)
 
