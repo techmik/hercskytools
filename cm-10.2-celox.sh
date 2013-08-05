@@ -12,6 +12,9 @@ CHANGES+=(46107)
 # gralloc (display-caf)
 CHANGES+=(46166)
 
+# libstagefright: Add legacy LPAPlayer
+CHANGES+=(46451)
+
 # libgralloc:  Change ionFlags for GRALLOC_USAGE_PRIVATE_MM_HEAP case
 #   - fixes secure memory crash in OMX
 CHANGES+=(46521)
