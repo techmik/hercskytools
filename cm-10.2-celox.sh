@@ -3,7 +3,11 @@
 repo abandon auto &&
 
 # audio/msm8660 fixes
+CHANGES+=(46107) ||
+
+# audio/msm8660 fixes
 CHANGES+=(46107)
+
 
 # gralloc (display-caf)
 CHANGES+=(46166)
