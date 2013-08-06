@@ -6,6 +6,9 @@ CHANGES+=(46107)
 # audio/msm8660: update audio HALs
 CHANGES+=(47114)
 
+# audio/msm8660: update api for devices
+CHANGES+=(47202)
+
 # gralloc (display-caf)
 CHANGES+=(46166)
 
