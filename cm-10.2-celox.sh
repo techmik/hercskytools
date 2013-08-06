@@ -4,7 +4,7 @@
 CHANGES+=(46107)
 
 # audio/msm8660: update audio HALs
-CHANGES+=(47119)
+CHANGES+=(47114)
 
 # gralloc (display-caf)
 CHANGES+=(46166)
