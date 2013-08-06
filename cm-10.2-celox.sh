@@ -9,6 +9,9 @@ CHANGES+=(47114)
 # audio/msm8660: update api for devices
 CHANGES+=(47202)
 
+# audio/msm8660: add missing call
+CHANGES+=(47210)
+
 # gralloc (display-caf)
 CHANGES+=(46166)
 
