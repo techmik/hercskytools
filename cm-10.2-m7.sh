@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Contact preloading
-CHANGES+=(46386)
-
 # BT kernel fixes
 CHANGES+=(47212 47217)
 
