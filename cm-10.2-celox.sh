@@ -3,9 +3,6 @@
 # audio/msm8660 fixes
 CHANGES+=(46107)
 
-# audio/msm8660: fix mediaserver crashes
-CHANGES+=(47114)
-
 # audio/msm8660: update audio HALs
 CHANGES+=(47119)
 
