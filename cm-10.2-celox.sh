@@ -2,15 +2,10 @@
 
 # audio/msm8660 fixes
 CHANGES+=(46107)
-
-# audio/msm8660: update audio HALs
 CHANGES+=(47114)
-
-# audio/msm8660: update api for devices
 CHANGES+=(47202)
-
-# audio/msm8660: add missing call
 CHANGES+=(47210)
+CHANGES+=(47229)
 
 # gralloc (display-caf)
 CHANGES+=(46166)
