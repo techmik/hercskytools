@@ -38,6 +38,9 @@ CHANGES+=(46287)
 # TunnelAudio: Fixes playback with Qualcomm tunnel audio for players which use gapless api
 CHANGES+=(46607)
 
+# qcom-common: enable hardware aac encoder
+CHANGES+=(47200)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
