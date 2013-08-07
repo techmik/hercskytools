@@ -44,6 +44,9 @@ CHANGES+=(47338)
 # Typo fix in OMX
 CHANGES+=(47297)
 
+# LTE icon
+CHANGES+=(47348)
+
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
