@@ -41,6 +41,9 @@ CHANGES+=(46607)
 # qcom-common: enable hardware aac encoder
 CHANGES+=(47200)
 
+# patch kernel to version 3.0.89
+CHANGES+=(47262)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
