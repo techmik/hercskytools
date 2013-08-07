@@ -46,6 +46,9 @@ CHANGES+=(46607)
 # qcom-common: enable hardware aac encoder
 CHANGES+=(47200)
 
+# audio: fix direct output usage when a profile is not found
+CHANGES+=(47229)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
