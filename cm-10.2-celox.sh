@@ -47,6 +47,12 @@ CHANGES+=(47297)
 # qcom-fm: audio: add support for FM feature
 CHANGES+=(47293)
 
+# Configure dalvik heap parameters for low memory devices
+CHANGES+=(47285)
+
+# Reduce total number of background apps for low memory devices
+CHANGES+=(47288)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
