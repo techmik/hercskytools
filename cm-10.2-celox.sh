@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Insecure heap change from cyanogen
-CHANGES+=(47414 47415)
-
 # audio/msm8660: use ALSA policy manager
 CHANGES+=(47390)
 
