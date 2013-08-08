@@ -38,14 +38,8 @@ CHANGES+=(46287)
 # TunnelAudio: Fixes playback with Qualcomm tunnel audio for players which use gapless api
 CHANGES+=(46607)
 
-# qcom-common: enable hardware aac encoder
-CHANGES+=(47200)
-
 # Fix typo
 CHANGES+=(47297)
-
-# qcom-fm: audio: add support for FM feature
-CHANGES+=(47293)
 
 # Configure dalvik heap parameters for low memory devices
 CHANGES+=(47285)
