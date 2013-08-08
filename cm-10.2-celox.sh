@@ -44,6 +44,12 @@ CHANGES+=(47200)
 # surfaceflinger: enable EGL_NEEDS_FNW for qcom legacy
 CHANGES+=(47259)
 
+# Fix typo
+CHANGES+=(47297)
+
+# qcom-fm: audio: add support for FM feature
+#CHANGES+=(47293)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
