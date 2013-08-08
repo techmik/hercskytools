@@ -3,9 +3,6 @@
 # audio/msm8660: use ALSA policy manager
 CHANGES+=(47390)
 
-# gralloc (display-caf)
-CHANGES+=(46166)
-
 # libgralloc:  Change ionFlags for GRALLOC_USAGE_PRIVATE_MM_HEAP case
 #   - fixes secure memory crash in OMX
 CHANGES+=(46521)
@@ -15,9 +12,6 @@ CHANGES+=(46521)
 
 # Use display-caf for QCOM_BSP
 #CHANGES+=(46183)
-
-# libstagefright: Add legacy LPAPlayer
-CHANGES+=(46451)
 
 # msm8660: enable Qualcomm AV enhancements
 CHANGES+=(46624)
