@@ -6,12 +6,6 @@ CHANGES+=(47414 47415)
 # audio/msm8660: use ALSA policy manager
 CHANGES+=(47390)
 
-# DashPlayer: make jb_mr2 compatible
-#CHANGES+=(46086)
-
-# Use display-caf for QCOM_BSP
-#CHANGES+=(46183)
-
 # msm8660: enable Qualcomm AV enhancements
 CHANGES+=(46624)
 
@@ -32,6 +26,9 @@ CHANGES+=(47338)
 
 # Typo fix in OMX
 CHANGES+=(47297)
+
+# Focal overlay
+CHANGES+=(47432)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
