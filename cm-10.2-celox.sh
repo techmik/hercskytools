@@ -11,7 +11,7 @@ CHANGES+=(46166)
 CHANGES+=(46521)
 
 # DashPlayer: make jb_mr2 compatible
-CHANGES+=(46086)
+#CHANGES+=(46086)
 
 # Use display-caf for QCOM_BSP
 #CHANGES+=(46183)
