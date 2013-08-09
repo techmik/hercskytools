@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # audio/msm8660 fixes
-CHANGES+=(46107)
-CHANGES+=(47114)
-CHANGES+=(47202)
-CHANGES+=(47210)
-CHANGES+=(47231)
+#CHANGES+=(46107)
 
 # gralloc (display-caf)
 CHANGES+=(46166)
