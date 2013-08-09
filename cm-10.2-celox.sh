@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# audio/msm8660 fixes
-#CHANGES+=(46107)
+# audio/msm8660: use ALSA policy manager
+CHANGES+=(47390)
 
 # gralloc (display-caf)
 CHANGES+=(46166)
