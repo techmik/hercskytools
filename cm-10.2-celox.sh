@@ -27,6 +27,9 @@ CHANGES+=(47297)
 # Focal overlay
 CHANGES+=(47432)
 
+# msm8660: Use retire fence from MDP driver
+CHANGES+=(47492)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
