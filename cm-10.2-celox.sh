@@ -30,6 +30,9 @@ CHANGES+=(47432)
 # msm8660: Use retire fence from MDP driver
 CHANGES+=(47492)
 
+# msm8660: Basic SELinux policy
+CHANGES+=(47521)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
