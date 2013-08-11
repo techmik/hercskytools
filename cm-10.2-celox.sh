@@ -30,7 +30,13 @@ CHANGES+=(47432)
 # msm8660: Use retire fence from MDP driver
 CHANGES+=(47492)
 
-# msm8660: Basic SELinux policy
+# CPU-specific optimizations
+CHANGES+=(47507)
+
+# dynThreshold to 1.9
+CHANGES+=(47516)
+
+# SELinux policy
 CHANGES+=(47521)
 
 # Do the cherry-picking
