@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# audio/msm8660: use ALSA policy manager
-CHANGES+=(47390)
-
 # msm8660: enable Qualcomm AV enhancements
 CHANGES+=(46624)
 
@@ -26,18 +23,6 @@ CHANGES+=(47297)
 
 # Focal overlay
 CHANGES+=(47432)
-
-# msm8660: Use retire fence from MDP driver
-CHANGES+=(47492)
-
-# CPU-specific optimizations
-CHANGES+=(47507)
-
-# dynThreshold to 1.9
-CHANGES+=(47516)
-
-# SELinux policy
-CHANGES+=(47521)
 
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
