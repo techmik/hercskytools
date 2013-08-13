@@ -12,9 +12,6 @@ CHANGES+=(46629)
 # Camera: Bring Samsung camera fixes and features to 4.3
 CHANGES+=(46287)
 
-# TunnelAudio: Fixes playback with Qualcomm tunnel audio for players which use gapless api
-CHANGES+=(46607)
-
 # Add PR_{GET,SET}_NO_NEW_PRIVS to prevent execve from granting privs
 #CHANGES+=(47338)
 
