@@ -20,6 +20,7 @@ CHANGES+=(47948)
 
 # tinyalsa: Underp the period size parameter
 CHANGES+=(47946)
+
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
