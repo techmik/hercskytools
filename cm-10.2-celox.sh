@@ -12,9 +12,6 @@ CHNAGES+=(47338)
 # Focal overlay
 CHANGES+=(47432)
 
-# remove journal_async_commit in fstab
-CHANGES+=(47856)
-
 # Do the cherry-picking
 ./build/tools/repopick.py -b ${CHANGES[@]}
 
