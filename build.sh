@@ -11,21 +11,40 @@ START=$(date +%s)
 # Device specific settings
     case "$COMMAND" in
         clean)
+                make clobber
+                make clean
                 cd kernel/samsung/msm8660-common
                 make mrproper
                 cd ../../../
-                make clobber
                 exit
                 ;;
 
-	    prepare)
+        prepare)
 		        (repo abandon auto && repo sync -j8) ||
 		        repo sync -j8
 		        exit
                 ;;
 
+        exhilarate-10.2)
+                ./hercskytools/cm-10.2-celox.sh $COMMAND
+                . build/envsetup.sh
+                export CCACHE_BASEDIR="$HOME"
+                ./vendor/cm/get-prebuilts
+                if [ "$ADDITIONAL" = "eng" ]
+                then
+                        brunch cm_exhilarate-eng
+
+                elif [ "$ADDITIONAL" = "userdebug" ]
+                then
+                        brunch cm_exhilarate-userdebug
+
+                else
+                        brunch cm_exhilarate-userdebug
+                fi
+                ;;
+
         skyrocket-10.1)
-                ./hercskytools/cm-10.1-celox.sh
+                ./hercskytools/cm-10.1-celox.sh $COMMAND
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -43,7 +62,7 @@ START=$(date +%s)
                 ;;
 
         skyrocket-10.2)
-                ./hercskytools/cm-10.2-celox.sh
+                ./hercskytools/cm-10.2-celox.sh $COMMAND
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -61,7 +80,7 @@ START=$(date +%s)
                 ;;
 
         hercules-10.1)
-                ./hercskytools/cm-10.1-celox.sh
+                ./hercskytools/cm-10.1-celox.sh $COMMAND
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -79,7 +98,7 @@ START=$(date +%s)
                 ;;
 
         hercules-10.2)
-                ./hercskytools/cm-10.2-celox.sh
+                ./hercskytools/cm-10.2-celox.sh $COMMAND
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -97,7 +116,7 @@ START=$(date +%s)
                 ;;
 
         quincyatt-10.1)
-                ./hercskytools/cm-10.1-celox.sh
+                ./hercskytools/cm-10.1-celox.sh $COMMAND
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -115,7 +134,7 @@ START=$(date +%s)
                 ;;
 
         quincyatt-10.2)
-                ./hercskytools/cm-10.2-celox.sh
+                ./hercskytools/cm-10.2-celox.sh $COMMAND
                 . build/envsetup.sh
 		export CCACHE_BASEDIR="$HOME"
                 ./vendor/cm/get-prebuilts
@@ -135,7 +154,7 @@ START=$(date +%s)
                 echo -e "Usage: $0 DEVICE-BRANCH ADDITIONAL"
 		echo -e "ADDITONAL: eng, userdebug (default)"
                 echo -e "Example: ./build.sh skyrocket-10.1 eng"
-                echo -e "Supported Devices: skyrocket, hercules, quincyatt"
+                echo -e "Supported Devices: skyrocket, hercules, quincyatt, exhilarate"
                 echo -e "Use: ./build.sh clean to make clobber"
                 echo -e "Use: ./build.sh prepare to repo sync"
                 exit 2
