@@ -11,12 +11,6 @@ PARAM=`echo $1 | cut -d '-' -f 1`
 # Focal overlay
 CHANGES+=(47432)
 
-# kernel: msm8660-common: Update frequency tables for I577
-CHANGES+=(48762)
-
-# exhilarate: kernel defconfig updates
-CHANGES+=(49211)
-
 #####
 #####   END GENERAL PICK SECTION
 #####
